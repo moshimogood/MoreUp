@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        【神戸】パーソナルカラー診断・骨格診断・顔タイプ診断・メイクレッスン　イメージアップサロンmore
+        up
+    </title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="description"
+        content="20代アドバイザーがパーソナルカラー診断・骨格診断・顔タイプ診断®をもとになりたいイメージに近づけるようアドバイスします。オンリーワンのレッスンで美しく、内側から輝く女性に♪" />
+    <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script type="text/javascript">
+        $(window).scroll(function () {
+            $(".header").toggleClass("inner", window.scrollY > 100);
+        $(".title").toggleClass("inner", window.scrollY > 100);
+        $(".sub-title").toggleClass("inner", window.scrollY > 100);
+        });
+        $(document).ready(function () {
+            $(".slider").bxSlider({
+                auto: true,
+                pause: 5000,
+            });
+            function showLoading() {
+                $("#splash").fadeIn();
+            }
+            function hideLoading() {
+                $("#splash").fadeOut();
+            }
+
+            setTimeout(hideLoading, 500);
+
+            showLoading();
+        });
+        jQuery(function ($) {
+            var fadeIn = $(".fade-in");
+            $(window).scroll(function () {
+                $(fadeIn).each(function () {
+                    var offset = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll > offset - windowHeight + 200) {
+                        $(this).addClass("scroll-in");
+                    }
+                });
+            });
+        });
+        $(function () {
+            $(".nav-drawer").on("click", function () {
+                $(".nav-drawer").toggleClass("close"); // .btnにcloseというクラスが追加される
+                $(".nav-content").toggleClass("close");
+                $(".bx-viewport .slider").toggleClass("close");
+                $(".wrapper").toggleClass("close-about");
+                $("header").toggleClass("close");
+                $(".MuAbout-header-img").toggleClass("close");
+                $("body").toggleClass("close");
+                $("nav").fadeToggle(500); // navの表示・非表示切り替わる
+                $(".title").toggleClass("black");
+          $(".sub-title").toggleClass("black");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="splash">
+        <div id="splash_logo">
+            <div class="sub-title-logo" style="color: grey">
+                Image Consulting Salon
+              </div>
+              <div class="title-logo" style="color: grey">more up</div>
+            <div class="load-circle"></div>
+        </div>
+    </div>
+    <!-- ヘッダー -->
+    <div class="wrapper" style="position: relative; background: #e1d6da;">
+        <header class="header">
+            <div class="header-wrapper">
+                <div class="header-title-wrapper">
+                    <a href="index.html">
+                        <div class="sub-title">Image Consulting Salon</div>
+                        <div class="title">more up</div>
+                    </a>
+                </div>
+                <div class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="MuAbout.html">more upについて</a></li>
+                        <li><a href="MuMenu.html">メニュー</a></li>
+                        <li><a href="MuReserve.html">ご予約</a></li>
+                        <li><a href="MuFlow.html">診断の流れ</a></li>
+                        <li><a href="MuReport.html">お客様レポート</a></li>
+                        <li><a href="MuAccess.html">アクセス</a></li>
+                    </ul>
+                </div>
+                <div class="nav-drawer">
+                    <span class="bar bar-top"></span>
+                    <span class="bar bar-middle"></span>
+                    <span class="bar bar-bottom"></span>
+                </div>
+                <div class="nav-content">
+                    <ul class="nav-drawerList">
+                        <li class="nav-drawerList-item"><a href="index.html">HOME</a></li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuAbout.html">more upについて</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuMenu.html">メニュー</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuReserve.html">ご予約</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuFlow.html">診断の流れ</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuReport.html">お客様レポート</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuAccess.html">アクセス</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <img src="./images//aboutsalon.jpg" alt="" class="MuAbout-header-img" />
+    </div>
+    <div class="about-salon">
+        <div style="font-size: 2rem;">ABOUT SALON</div>
+        <div style="font-size: 1.2rem; font-family: hannari">当サロンの思い</div>
+    </div>
+    <!-- ヘッダーここまで -->
+    <!-- メイン -->
+    <div class="wrapper">
+        <div class="top-info" style="height: 55rem;">
+            <div class="top-info-content">
+                <div class="top-info-title-wrapper">
+                    <div class="top-info-title">more upは</div>
+                    <div class="top-info-title">ただ似合うスタイリングを</div>
+                    <div class="top-info-title">お伝えするだけではありません</div>
+                </div>
+                <div class="content fade-in fade-in-left">
+                    <div class="content-text" style="color:grey">
+                        魅力をアップさせるアイテムを知ることで<br>
+                        ”店頭の服やコスメがキラキラして見える”<br>
+                        外見を磨き、洗練された女性になることで<br>
+                        ”自信がついてオシャレを心から楽しめる”
+                    </div>
+                    <div class="content-text" style="font-size: 1.2rem; margin: 2rem auto;">
+                        <span
+                            class="top-strong-color">外見を磨くと<br /><br />『行く場所が変わる』<br />『出会う人が変わる』<br />『人の見る目が変わる』<br /><br />
+                            そして人生が変わります</span>
+                    </div>
+                    <div class="content-text" style="color:grey">
+                        これから先の人生まで変えてしまうような<br>
+                        そんなきっかけになれるサロンを目指しています
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background-color: #e1d6da;" class="MuAbout-salon-img">
+            <img src="./images/salonimage.jpg" />
+        </div>
+        <div class="wave"></div>
+        <div class="MuAbout-content">
+            <div class="MuAbout-content-title">3Steps</div>
+            <div class="MuAbout-content-subtitle">
+                理想のあなたになって<br>
+                人生を変えるステップ
+            </div>
+            <div class="MuAbout-steps">
+                <div class="MuAbout-step-content">
+                    <img src="./images/step1.jpg" class="fade-in fade-in-up" />
+                    <div class="MuAbout-step-title fade-in fade-in-up">自分の魅力を知る</div>
+                    <div class="MuAbout-step-explanation fade-in fade-in-up">
+                        誰もが違った魅力を持っています。あなたと同じ顔、体、肌色、瞳の色を持つ人は存在しません。まずは自分の魅力に気づきそれを認めることで、魅力あふれる女性になるためのマインドセットをしましょう。
+                    </div>
+                </div>
+                <div class="MuAbout-step-content" style="margin-top: 2rem;">
+                    <img src="./images/step2.jpg" class="fade-in fade-in-up" />
+                    <div class="MuAbout-step-title fade-in fade-in-upfade-in fade-in-up">魅せ方を学ぶ</div>
+                    <div class="MuAbout-step-explanation fade-in fade-in-up">
+                        あなただけの魅力を最大に生かす魅せ方を学んでいただきます。「なんか素敵だな」と思われる女性は内側から自信が満ち溢れるような外見をしています。魅せ方ひとつでコンプレックスもチャームポイントになります。
+                    </div>
+                </div>
+                <div class="MuAbout-step-content" style="margin-top: 2rem;"></div>
+                <img src="./images/step3.jpg" class="fade-in fade-in-up" />
+                <div class="MuAbout-step-title fade-in fade-in-up">理想のイメージに近づける</div>
+                <div class="MuAbout-step-explanation fade-in fade-in-up">
+                    魅力を最大限に引き出すファッションはあなたの『軸』になります。最後に「自分はどう見られたい?」「どんな人生を送りたい?」と自問自答してください。そこにあなたらしさが出てきます。『軸』+『あなたらしさ』を叶えるスタイルが今後の人生を変える、理想のあなたになるためのファッションです!
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="MuAbout-message-container fade-in fade-in-up" style="margin: 2rem auto;">
+        <div class="MuAbout-message-title">＼こんな方におすすめ！／</div>
+        <div class="MuAbout-message-border">
+            <div class="MuAbout-message-wrapper">
+                <img src="./images/jewelry.jpg" class="MuAbout-message-img">
+                <div class="MuAbout-message-text">魅力を引き出すファッションが知りたい</div>
+            </div>
+            <div class="MuAbout-message-wrapper">
+                <img src="./images/jewelry.jpg" class="MuAbout-message-img">
+                <div class="MuAbout-message-text">毎朝のコーディネートを楽にしたい</div>
+            </div>
+            <div class="MuAbout-message-wrapper">
+                <img src="./images/jewelry.jpg" class="MuAbout-message-img">
+                <div class="MuAbout-message-text">服やコスメの無駄な買い物を減らしたい</div>
+            </div>
+            <div class="MuAbout-message-wrapper">
+                <img src="./images/jewelry.jpg" class="MuAbout-message-img">
+                <div class="MuAbout-message-text">垢抜けてキレイになりたい</div>
+            </div>
+            <div class="MuAbout-message-wrapper">
+                <img src="./images/jewelry.jpg" class="MuAbout-message-img">
+                <div class="MuAbout-message-text">理想の女性になって人生を変えたい</div>
+            </div>
+        </div>
+    </div>
+    <div class="profile-wrapper">
+        <div class="guest-title">Message</div>
+        <img src="./images/message.jpg" style="margin-top: 2rem" class="fade-in fade-in-up" />
+        <div class="profile-content-wrapper fade-in fade-in-left">
+            <div class="profile-name">TOMOKO</div>
+            <div class="profile-sub-name">
+                <span class="strong-color">イメージコンサルタント/more up 代表</span>
+            </div>
+            <div class="profile-content fade-in fade-in-left">
+                ”垢抜けてキレイになりたい”<br>
+                そんな思いでサロンに来ていただく女性をたくさん見てきました。そんな私も、数年前は同じ思いでイメージコンサルを受けた一人でした。<br><br>
+
+                「あなたのパーソナルカラーはスプリングです」「骨格ウェーブなのでハイウエストが似合います」自分を輝かせるファッションのアドバイスは<span class="profile-font">一生物の知識</span>となりました。<br><br>
+
+                じゃあ、みんながその通りに服を着てメイクしてキレイになれるのか?私はそうは思いません。確かに、第一印象がアップすることは間違いないでしょう。しかし、本当にあなたの人生を輝かせるファッションは「診断結果」の中には存在しないと思っています。<br><br>
+
+                キレイで垢抜けた女性は<span class="profile-font">「内側から魅力があふれる女性」</span>だと考えます。そんな女性になるために必要なのは、「あなたの魅力を最大限に引き出すファッションをすること」そして、「あなたがなりたい自分になること」です。心から外見に自信を持ち、着たい服を着て、したいメイクをする、それが<span class="profile-font">あなたの人生を輝かせます。</span><br><br>
+
+                当サロンに来ていただいたことがきっかけで人生が動き出した女性がたくさんいます。<br>
+                「彼氏ができた!」<br>
+                「大好きな彼にプロポーズされた!」<br>
+                「きれいになったと褒められた!」<br><br>
+
+                次はあなたの番。<br>
+                <span class="profile-font">外見を磨けば人生が変わります。</span><br><br>
+
+                一緒に人生を変えましょう!
+            </div>
+            <div class="profile-content fade-in fade-in-left">
+                <div class="profile-content-bottom">
+                    <保有資格> <br />
+                        ‧サイアートパーソナルカラーアナリスト(12タイプ)<br />
+                        ‧骨格診断アドバイザー <br>
+                        ‧顔タイプアドバイザー<br />
+                        ‧顔タイプウェディングアドバイザー
+                </div>
+            </div>
+            <div class="top-content-button-wrapper">
+                <a class="top-content-button" href="">プロフィールを見る</a>
+            </div>
+        </div>
+        <div class="link-area-wrapper">
+            <div class="link-area">
+              <div class="link-image-wrapper">
+                <a href="https://www.instagram.com/moreup_tomoko/">
+                  <img
+                    src="./images/link_instagram.jpg"
+                    alt=""
+                    class="link-image"
+                  />
+                </a>
+              </div>
+              <div class="link-image-wrapper">
+                <a href="https://lin.ee/c9Ox3fI">
+                  <img src="./images/link_line.jpg" alt="" class="link-image" />
+                </a>
+              </div>
+              <div class="link-image-wrapper">
+                <a href="https://ameblo.jp/moreup-tomoko/">
+                  <img src="./images/link_blog.jpg" alt="" class="link-image" />
+                </a>
+              </div>
+              <div class="link-image-wrapper">
+                <a href="https://twitter.com/moreuptomoko">
+                  <img
+                    src="./images/link_twitter.jpg"
+                    alt=""
+                    class="link-image"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="footer">
+        <div class="footer-title">
+            <div class="sub-title">Image Consulting Salon</div>
+            <div class="title">more up</div>
+        </div>
+        <p>&copy;Copyright more up TOMOKO. All right reserved.</p>
+    </div>
+    <!-- フッターここまで -->
+    </div>
+    </div>
+</body>
+
+</html>

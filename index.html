@@ -7,7 +7,7 @@
       【神戸】パーソナルカラー診断・骨格診断・顔タイプ診断・メイクレッスン　イメージアップサロンmore
       up
     </title>
-    <link rel="stylesheet" href="0style.css" />
+    <link rel="stylesheet" href="style.css" />
     <meta
       name="description"
       content="20代アドバイザーがパーソナルカラー診断・骨格診断・顔タイプ診断®をもとになりたいイメージに近づけるようアドバイスします。オンリーワンのレッスンで美しく、内側から輝く女性に♪"
@@ -20,11 +20,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
     <script type="text/javascript">
+      $(window).scroll(function () {
+        $(".header").toggleClass("inner", window.scrollY > 100);
+        $(".title").toggleClass("inner", window.scrollY > 100);
+        $(".sub-title").toggleClass("inner", window.scrollY > 100);
+      });
       $(document).ready(function () {
         $(".slider").bxSlider({
           auto: true,
           pause: 5000,
         });
+
+        function showLoading() {
+          $("#splash").fadeIn();
+        }
+        function hideLoading() {
+          $("#splash").fadeOut();
+        }
+
+        setTimeout(hideLoading, 500);
+
+        showLoading();
       });
       jQuery(function ($) {
         var fadeIn = $(".fade-in");
@@ -33,70 +49,98 @@
             var offset = $(this).offset().top;
             var scroll = $(window).scrollTop();
             var windowHeight = $(window).height();
-            if (scroll > offset - windowHeight + 150) {
+            if (scroll > offset - windowHeight + 200) {
               $(this).addClass("scroll-in");
             }
           });
         });
       });
       $(function () {
-        $(".menu-trigger").on("click", function () {
-          $(".menu-trigger").toggleClass("close"); // .btnにcloseというクラスが追加される
+        $(".nav-drawer").on("click", function () {
+          $(".nav-drawer").toggleClass("close"); // .btnにcloseというクラスが追加される
           $(".nav-content").toggleClass("close");
+          $(".bx-viewport .slider").toggleClass("close");
+          $(".wrapper").toggleClass("close-about");
+          $("header").toggleClass("close");
+          $("body").toggleClass("close");
           $("nav").fadeToggle(500); // navの表示・非表示切り替わる
+          $(".title").toggleClass("black");
+          $(".sub-title").toggleClass("black");
         });
       });
     </script>
   </head>
 
   <body>
+    <div id="splash">
+      <div id="splash_logo">
+        <div class="sub-title-logo" style="color: grey">
+          Image Consulting Salon
+        </div>
+        <div class="title-logo" style="color: grey">more up</div>
+        <div class="load-circle"></div>
+      </div>
+    </div>
     <!-- ヘッダー -->
     <div class="wrapper">
       <header class="header">
         <div class="header-wrapper">
           <div class="header-title-wrapper">
-            <div class="sub-title">Image Consulting Salon</div>
-            <div class="title">more up</div>
+            <a href="index.html">
+              <div class="sub-title">Image Consulting Salon</div>
+              <div class="title">more up</div>
+            </a>
           </div>
           <div class="nav">
             <ul class="nav-list">
               <li><a href="index.html">HOME</a></li>
-              <li><a href="0menu.html">メニュー</a></li>
-              <li><a href="0reserve.html">ご予約</a></li>
-              <li><a href="0detail.html">診断の流れ</a></li>
-              <li><a href="0review.html">お客様の声</a></li>
-              <li><a href="0access.html">アクセス</a></li>
+              <li><a href="MuAbout.html">more upについて</a></li>
+              <li><a href="MuMenu.html">メニュー</a></li>
+              <li><a href="MuReserve.html">ご予約</a></li>
+              <li><a href="MuFlow.html">診断の流れ</a></li>
+              <li><a href="MuReport.html">お客様レポート</a></li>
+              <li><a href="MuAccess.html">アクセス</a></li>
             </ul>
           </div>
-          <div id="nav-drawer">
-            <button class="menu-trigger" id="menu">
-              <span class="bar bar-top"></span>
-              <span class="bar bar-middle"></span>
-              <span class="bar bar-bottom"></span>
-              <div class="bar-text">Menu</div>
-            </button>
-            <div class="nav-content">
-              <ul class="nav-drawerList">
-                <li class="nav-drawerList-item"><a href="#">HOME</a></li>
-                <li class="nav-drawerList-item"><a href="#">メニュー</a></li>
-                <li class="nav-drawerList-item"><a href="#">ご予約</a></li>
-                <li class="nav-drawerList-item"><a href="#">診断の流れ</a></li>
-                <li class="nav-drawerList-item"><a href="#">お客様の声</a></li>
-                <li class="nav-drawerList-item"><a href="#">アクセス</a></li>
-              </ul>
-            </div>
+          <div class="nav-drawer">
+            <span class="bar bar-top"></span>
+            <span class="bar bar-middle"></span>
+            <span class="bar bar-bottom"></span>
+          </div>
+          <div class="nav-content">
+            <ul class="nav-drawerList">
+              <li class="nav-drawerList-item"><a href="index.html">HOME</a></li>
+              <li class="nav-drawerList-item">
+                <a href="MuAbout.html">more upについて</a>
+              </li>
+              <li class="nav-drawerList-item">
+                <a href="MuMenu.html">メニュー</a>
+              </li>
+              <li class="nav-drawerList-item">
+                <a href="MuReserve.html">ご予約</a>
+              </li>
+              <li class="nav-drawerList-item">
+                <a href="MuFlow.html">診断の流れ</a>
+              </li>
+              <li class="nav-drawerList-item">
+                <a href="MuReport.html">お客様レポート</a>
+              </li>
+              <li class="nav-drawerList-item">
+                <a href="MuAccess.html">アクセス</a>
+              </li>
+            </ul>
           </div>
         </div>
       </header>
       <div class="slider">
-        <img src="./images//keyvisual1.jpg" alt="" />
-        <img src="./images/keyvisual2.jpg" alt="" />
+        <li><img src="./images//keyvisual1.jpeg" alt="" /></li>
+        <li><img src="./images/keyvisual2.jpeg" alt="" /></li>
+        <li><img src="./images/keyvisual3.jpeg" alt="" /></li>
+        <li><img src="./images/keyvisual4.jpeg" alt="" /></li>
       </div>
       <div class="title-content-wrapper">
-        <div class="title-content">外見を磨けば　人生が変わる</div>
-        <div class="title-button-wrapper">
-          <a class="title-button" href="">ご予約はこちら</a>
-        </div>
+        <div>外見を磨けば</div>
+        <div>人生が変わる</div>
       </div>
       <!-- ヘッダーここまで -->
       <!-- メイン -->
@@ -107,296 +151,344 @@
               <div class="top-info-title">プロとともに作り上げる</div>
               <div class="top-info-title">あなただけのファッションレシピ</div>
             </div>
-            <div class="content fade-in fade-in-up">
+            <div class="content fade-in fade-in-left">
               <div class="content-text">
-                more
-                upはおしゃれで洗練された女性になるためのファッション・メイクのコンサルテ
-                ィングサロンです。
+                <span class="top-strong-color"
+                  >12タイプパーソナルカラー診断<br />骨格診断<br />顔タイプ診断R<br
+                /></span>
+                さらに<br /><span class="top-strong-color"
+                  >more up 独自の メソッド</span
+                >をもとに<br />
+                <span class="top-strong-color">『一生物の似合うの法則』</span
+                >を<br />学んでいただきます。
               </div>
               <div class="content-text">
-                <b>12タイプパーソナルカラー診断・骨格診断・顔タイプ診断R</b
-                >、さらに
-                <b>more up 独自の メソッド</b>
-                をもとに『<b>一生物の似合うの法則</b>』を学んでいただきます。
-              </div>
-              <div class="content-text">
-                スタイリングアドバイスではただ似合う理論をお伝えするだけでなく、好みや理想、ラ
-                イフスタイルなどの『<b>あなたらしさ</b>』を大切にしています。
-              </div>
-              <div class="content-text">
-                誰もが無意識のうちに抱いている「こうなりたい」という理想。
-                それを叶えつつ第一印象がアップする、そんなあなただけのファッションレシピを一緒
-                に探しに行きましょう。
+                世界でたった一人の<br /><span class="top-strong-color"
+                  >『あなたらしさ』</span
+                >を大切に<br />
+                オンリーワンのファッションレシピを<br />一緒に探しに行きましょう。
               </div>
             </div>
             <div class="top-content-button-wrapper">
-              <a class="top-content-button fade-in fade-in-up" href=""
-                >続きを読む</a
+              <a class="top-content-button" href="./MuAbout.html"
+                >VIEW MORE →</a
               >
             </div>
           </div>
         </div>
+        <div class="wedding-menu">
+          <a href="MuMenu.html#wedding">
+            <img src="./images/weddingbanner.jpg" class="wedding-img" />
+          </a>
+        </div>
+        <div>
+          <div class="wave"></div>
+        </div>
         <div class="diagnose-wrapper">
-          <img
-            src="./images/diagnose.jpg"
-            class="diagnose-image fade-in fade-in-up"
-          />
+          <div class="diagnose-sub-title">似合うを見つける</div>
           <div class="diagnose-title">4つの診断</div>
-          <div class="content fade-in fade-in-up">
-            <div class="content-text">
-              全てのメニューに1ヶ月間LINE相談アフターフォローが付いています。<br />
-              診断後も買い物の迷いがないよう、プロのサポートが受けられます。
-            </div>
-            <div class="content-text">
-              3名まで同時診断可能です。<br />
-              ご友人と、ご家族と、違いを比較しながら楽しく学べます。
+          <div class="personal">
+            <div class="personal-title-wrapper">
+              <div class="personal-title">
+                12タイプ<br />パーソナルカラー診断
+              </div>
+              <img src="./images/personal.jpg" class="fade-in fade-in-up" />
+              <div class="personal-content-wrapper fade-in fade-in-up">
+                <div class="personal-content">
+                  肌・瞳・髪の色と調和する色を見つける診断です。
+                  <span class="strong-color"
+                    >肌をキレイに見せたり輪郭をすっきり見せる効果</span
+                  >があります。
+                </div>
+                <div class="personal-content">
+                  more
+                  upでは従来の4シーズン分類を細分化した12タイプパーソナルカラー(Sci/Artパーソナルカラー)を採用しています。<br />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="personal">
-          <div class="personal-title-wrapper">
-            <div class="personal-title fade-in fade-in-up">
-              12タイプパーソナルカラー診断
-            </div>
-            <img src="./images/personal.jpg" class="fade-in fade-in-left" />
+          <div class="personal-title-wrapper" style="margin-top: 5rem">
+            <div class="personal-title">骨格診断</div>
+            <img src="./images/skelton.jpg" class="fade-in fade-in-up" />
             <div class="personal-content-wrapper fade-in fade-in-up">
               <div class="personal-content">
-                肌・瞳・髪の色と調和する色を見つける診断です。<br />
-                肌をキレイに見せたり輪郭をすっきり見せる効果があります。
+                生まれ持った骨・筋肉・脂肪のつき方からストレート・ウェーブ・ナチュラルに分類し似合う服の「素材」や「形」がわかる<span
+                  class="strong-color"
+                  >スタイルアップ理論</span
+                >です。
               </div>
               <div class="personal-content">
-                moreupでは従来の4シーズン分類を細分化した12タイプパーソナルカラー(Sci/Artパーソナルカラー)を採用しています。<br />
-                より詳しく似合う色を知りたい方、イエベ・ブルべにとらわれず似合う色の範囲を広げたい方におすすめです。
+                ストレート/ウェーブ/ナチュラルの3タイプに分類し似合う着こなしのアドバイスします。ご自身では気づかなかった<span
+                  class="strong-color"
+                  >身体の魅力</span
+                >を発見していきます。
+              </div>
+            </div>
+          </div>
+          <div class="personal-title-wrapper" style="margin-top: 5rem">
+            <div class="personal-title">顔タイプ診断</div>
+            <img src="./images/face.jpg" class="fade-in fade-in-up" />
+            <div class="personal-content-wrapper fade-in fade-in-up">
+              <div class="personal-content">
+                輪郭やパーツの特徴から8タイプに分類する診断です。<br />
+                <span class="strong-color"
+                  >ブランド選びや似合う柄、アクセサリーなど</span
+                >お顔立ちに似合うファッションのアドバイスをします。
+              </div>
+            </div>
+          </div>
+          <div class="personal-title-wrapper" style="margin-top: 5rem">
+            <div class="personal-title">メイクアドバイス</div>
+            <img src="./images/advice.jpg" class="fade-in fade-in-up" />
+            <div class="personal-content-wrapper fade-in fade-in-up">
+              <div class="personal-content">
+                診断結果をもとに<span class="strong-color"
+                  >魅力を引き出すメイク</span
+                >を学べます。<br />
+                一度メイクオフしていただきセルフメイクレッスンを行います。
+                顔タイプ診断Ⓡを受けていただく方のみ受講できます。<br />
+                よりお似合いになるコスメのご提案にはパーソナルカラー診断も同時に受けられることをおすすめします。
               </div>
             </div>
           </div>
         </div>
-        <div class="personal-title-wrapper" style="margin-top: 5rem">
-          <div class="personal-title fade-in fade-in-up">骨格診断</div>
-          <img src="./images/skelton.jpg" class="fade-in fade-in-left" />
-          <div class="personal-content-wrapper fade-in fade-in-up">
-            <div class="personal-content">
-              生まれ持った骨・筋肉・脂肪のつき方から<br />
-              似合う服の「素材」や「形」がわかるスタイルアップ理論です。
+        <div class="kind-button-wrapper">
+          <a class="kind-button" href="./MuMenu.html">VIEW MORE →</a>
+        </div>
+        <div class="guest-wrapper" style="margin-top: 5rem">
+          <div class="guest-title fade-in fade-in-up">お客様の声</div>
+          <div class="guest-content-wrapper">
+            <div
+              style="text-align: left; padding: 1rem"
+              class="fade-in fade-in-up"
+            >
+              <span class="strong-color">B様 22歳</span>
             </div>
-            <div class="personal-content">
-              ストレート/ウェーブ/ナチュラルの3タイプに分類し<br />
-              似合う着こなしのアドバイスします。<br />
-              ご自身では気づかなかった身体の魅力を発見していきます。
+            <div class="face-wrapper">
+              <div class="fade-in fade-in-left">
+                <img src="./images/before1.jpg" class="customer-image" />
+                <div>Before</div>
+                <div>普段メイク</div>
+              </div>
+              <div class="arrow"></div>
+              <div class="after-make fade-in fade-in-left fade-in-left-delay">
+                <img src="./images/after1.jpg" class="customer-image" />
+                <div class="image-shift"></div>
+                <div>After</div>
+                <div>レッスン後</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="personal-title-wrapper" style="margin-top: 5rem">
-          <div class="personal-title fade-in fade-in-up">顔タイプ診断</div>
-          <img src="./images/face.jpg" class="fade-in fade-in-left" />
-          <div class="personal-content-wrapper fade-in fade-in-up">
-            <div class="personal-content">
-              輪郭やパーツの特徴から8タイプに分類する診断です。<br />
-              お顔立ちに似合うファッションのアドバイスします。
+          <div class="line-wrapper">
+            <div class="line">実際のLINE</div>
+            <img
+              src="./images/voice1.jpg"
+              class="line-image fade-in fade-in-up"
+            />
+          </div>
+          <div class="guest-content-wrapper" style="margin-top: 5rem">
+            <div
+              style="text-align: left; padding: 1rem"
+              class="fade-in fade-in-up"
+            >
+              <span class="strong-color">N様 30歳 </span>
             </div>
-            <div class="personal-content">
-              ブランド選びや似合う柄、アクセサリーなど<br />
-              一気に好印象になる服選びができるようになります。<br />
-              ヘアスタイルに関してのご相談も承っております♪
+            <div class="face-wrapper">
+              <div class="fade-in fade-in-left">
+                <img src="./images/before2.jpg" class="customer-image" />
+                <div>Before</div>
+                <div>普段メイク</div>
+              </div>
+              <div class="arrow"></div>
+              <div class="after-make fade-in fade-in-left fade-in-left-delay">
+                <img src="./images/after2.jpg" class="customer-image" />
+                <div class="image-shift"></div>
+                <div>After</div>
+                <div>レッスン後</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="personal-title-wrapper" style="margin-top: 5rem">
-          <div class="personal-title fade-in fade-in-up">メイクアドバイス</div>
-          <img src="./images/advice.jpg" class="fade-in fade-in-left" />
-          <div class="personal-content-wrapper fade-in fade-in-up">
-            <div class="personal-content">
-              診断結果をもとに魅力を引き出すメイクを学べます。<br />
-              一度メイクオフしていただきセルフメイクレッスンを行います。
-            </div>
-            <div class="personal-content">
-              顔タイプ診断Rにオプションとしてお付けできます。<br />
-              (単体としては過去当サロンで顔タイプ診断Rを受けられた方のみ選択できます)<br />
-              よりお似合いになるコスメのご提案にはパーソナルカラー診断も<br />
-              同時に受けられることをおすすめします。
-            </div>
+          <div class="line-wrapper">
+            <div class="line">実際のLINE</div>
+            <img
+              src="./images/voice2.jpg"
+              class="line-image fade-in fade-in-up"
+            />
           </div>
-        </div>
-      </div>
-      <div class="top-content-button-wrapper fade-in fade-in-up">
-        <a class="top-content-button" href="" style="width: 12rem"
-          >メニューはこちら</a
-        >
-      </div>
-      <div class="guest-wrapper" style="margin-top: 5rem">
-        <img src="./images/heart.jpg" class="guest-image fade-in fade-in-up" />
-        <div class="guest-title fade-in fade-in-up">お客様の声</div>
-        <div class="guest-content-wrapper">
+          <div style="margin-top: 6rem; margin-bottom: 6rem">
+            <img src="./images/linestone.jpg" class="line-stone" />
+            <div class="user-message fade-in fade-in-left">
+              そのほかたくさんの喜びの声を<br />
+              いただいております！
+            </div>
+            <img src="./images/linestone.jpg" class="line-stone" />
+          </div>
+          <div class="line-wrapper">
+            <img src="./images/moteki.jpg" class="line-title-image" />
+            <div class="line-title">
+              <div
+                style="margin-top: 2rem; margin-left: 5rem; text-align: left"
+              >
+                ＼モテ期が来た！／
+              </div>
+            </div>
+            <img
+              src="./images/voice3.jpg"
+              class="line-message-other fade-in fade-in-up"
+            />
+          </div>
+          <div class="line-wrapper" style="margin-top: 6rem">
+            <img src="./images/make.jpg" class="line-title-image" />
+            <div class="line-title">
+              <div
+                style="margin-top: 2rem; margin-left: 5rem; text-align: left"
+              >
+                ＼メイク楽しんでます♪／
+              </div>
+            </div>
+            <img
+              src="./images/voice4.jpg"
+              class="line-message-other fade-in fade-in-up"
+            />
+          </div>
           <div
-            style="text-align: left; padding: 1rem"
-            class="fade-in fade-in-up"
+            class="line-wrapper"
+            style="margin-top: 10rem; padding-bottom: 5rem"
           >
-            B様 22歳 会社員
-          </div>
-          <div class="face-wrapper">
-            <div class="fade-in fade-in-left">
-              <img src="./images/before1.jpg" class="customer-image" />
-              <div>Before</div>
-              <div>普段メイク</div>
+            <img src="./images/hair.jpg" class="line-title-image" />
+            <div class="line-title">
+              <div
+                style="margin-top: 2rem; margin-left: 5rem; text-align: left"
+              >
+                ＼美容院に行ってきました！／
+              </div>
             </div>
-            <div class="arrow"></div>
-            <div class="fade-in fade-in-left fade-in-left-delay">
-              <img src="./images/after1.jpg" class="customer-image" />
-              <div>After</div>
-              <div>レッスン後</div>
-            </div>
+            <img
+              src="./images/voice5.jpg"
+              class="line-message-other fade-in fade-in-up"
+            />
           </div>
         </div>
-        <div class="line-wrapper">
-          <div class="line">実際のLINE</div>
+        <div class="profile-wrapper">
+          <div class="guest-title">プロフィール</div>
           <img
-            src="./images/voice1.jpg"
-            class="line-image fade-in fade-in-up"
-          />
-        </div>
-        <div class="guest-content-wrapper" style="margin-top: 5rem">
-          <div
-            style="text-align: left; padding: 1rem"
+            src="./images/profile1.jpg"
+            style="margin-top: 2rem"
             class="fade-in fade-in-up"
-          >
-            N様 30歳 主婦（育休中）
-          </div>
-          <div class="face-wrapper">
-            <div class="fade-in fade-in-left">
-              <img src="./images/before2.jpg" class="customer-image" />
-              <div>Before</div>
-              <div>普段メイク</div>
-            </div>
-            <div class="arrow"></div>
-            <div class="fade-in fade-in-left fade-in-left-delay">
-              <img src="./images/after2.jpg" class="customer-image" />
-              <div>Before</div>
-              <div>レッスン後</div>
-            </div>
-          </div>
-        </div>
-        <div class="line-wrapper">
-          <div class="line">実際のLINE</div>
-          <img
-            src="./images/voice2.jpg"
-            class="line-image fade-in fade-in-up"
           />
-        </div>
-        <div
-          style="font-size: 0.8rem; margin-top: 2rem"
-          class="fade-in fade-in-left"
-        >
-          そのほかたくさんの喜びの声をいただいております！
-        </div>
-        <div class="line-wrapper">
-          <img src="./images/moteki.jpg" class="line-title-image" />
-          <div class="line-title">
-            <div style="margin-top: 1rem; margin-left: 4rem">
-              ＼モテ期が来た！／
+          <div class="profile-content-wrapper fade-in fade-in-left">
+            <div class="profile-name">TOMOKO</div>
+            <div class="profile-sub-name">
+              <span class="strong-color"
+                >イメージコンサルタント/more up 代表</span
+              >
+            </div>
+            <div class="profile-content fade-in fade-in-left">
+              年間150名以上の診断実績を持つ魅力を引き出す専門家。<br />
+              「すべての女性が美しさを持っている」という想いの元、心に寄り添ったアドバイスが得意。タイプ論に当てはめず、お客様の隠れた魅力を引き出し、おしゃれを通して自信あふれる美しい女性へと導きます。
+            </div>
+            <div class="profile-content fade-in fade-in-left">
+              <div class="profile-content-bottom">
+                <保有資格> <br />
+                ‧サイアートパーソナルカラーアナリスト(12タイプ)<br />
+                ‧骨格診断アドバイザー <br />
+                ‧顔タイプアドバイザー<br />
+                ‧顔タイプウェディングアドバイザー
+              </div>
+            </div>
+            <div class="top-content-button-wrapper">
+              <a class="top-content-button" href="">プロフィールを見る</a>
             </div>
           </div>
-          <img
-            src="./images/voice3.jpg"
-            class="line-message-other fade-in fade-in-up"
-          />
-        </div>
-        <div class="line-wrapper" style="margin-top: 3rem">
-          <img src="./images/make.jpg" class="line-title-image" />
-          <div class="line-title">
-            <div style="margin-top: 1rem; margin-left: 4rem">
-              ＼メイク楽しんでます♪／
+          <div class="reserve-wrapper">
+            <img src="./images/reserve.jpg" style="height: 20rem" />
+            <div class="reserve-content-wrapper">
+              <div class="reserve-content">
+                おしゃれに自信がない<br />
+                自分の容姿に自信がない<br /><br />
+                そんなあなたにも必ず魅力がある。<br />
+                もっと自由に、おしゃれを通して素敵な自分を楽しもう!<br />
+                外見を磨いて人生を変えてみませんか?
+              </div>
+            </div>
+            <div class="reserve-button-wrapper">
+              <a class="reserve-button" href="https://reserva.be/moreup"
+                >ご予約はこちら</a
+              >
             </div>
           </div>
-          <img
-            src="./images/voice4.jpg"
-            class="line-message-other fade-in fade-in-up"
-          />
-        </div>
-        <div
-          class="line-wrapper"
-          style="margin-top: 8rem; padding-bottom: 5rem"
-        >
-          <img src="./images/hair.jpg" class="line-title-image" />
-          <div class="line-title">
-            <div style="margin-top: 1rem; margin-left: 4rem">
-              ＼美容院に行ってきました！／
-            </div>
-          </div>
-          <img
-            src="./images/voice5.jpg"
-            class="line-message-other fade-in fade-in-up"
-          />
-        </div>
-      </div>
-      <div class="profile-wrapper">
-        <img src="./images/propfile.jpg" class="guest-image" />
-        <div class="guest-title">プロフィール</div>
-        <img src="./images/profile1.jpg" style="margin-top: 2rem" />
-        <div class="profile-content-wrapper">
-          <div class="profile-name">TOMOKO</div>
-          <div class="profile-sub-name">
-            イメージコンサルタント/more up 代表
-          </div>
-          <div class="profile-content">
-            年間130名以上の診断実績を持つ魅力を引き出す専門家。<br />
-            「すべての女性が美しさを持っている」という想いの元、心に寄り添ったアドバイ
-            スが得意。<br />
-            タイプ論に当てはめず、お客様の隠れた魅力を引き出し、おしゃれを通
-            して自信あふれる美しい女性へと導きます。
-          </div>
-          <div class="profile-content">
-            <div>
-              <保有資格> <br />
-              ‧サイアートパーソナルカラーアナリスト(12タイプ)<br />
-              ‧骨格診断アドバイザー ‧顔タイプアドバイザー<br />
-              ‧顔タイプウェディングアドバイザー
-            </div>
-          </div>
-          <div class="top-content-button-wrapper">
-            <a class="top-content-button" href="">プロフィールを見る</a>
-          </div>
-        </div>
-        <div class="reserve-wrapper">
-          <img src="./images/reserve.jpg" style="height: 20rem" />
-          <div class="reserve-content-wrapper">
-            <div class="reserve-content">
-              おしゃれに自信がない<br />
-              自分の容姿に自信がない<br /><br />
-              そんなあなたにも必ず魅力がある。<br />
-              もっと自由に、おしゃれを通して素敵な自分を楽しもう!<br />
-              外見を磨いて人生を変えてみませんか?
-            </div>
-          </div>
-          <div class="reserve-button-wrapper">
-            <a class="reserve-button" href="">ご予約はこちら</a>
-          </div>
-        </div>
-        <div class="link-area-wrapper">
-          <div class="link-area">
-            <div class="link-image-wrapper">
-              <img
-                src="./images/link_instagram.jpg"
-                alt=""
-                class="link-image"
-              />
-            </div>
-            <div class="link-image-wrapper">
-              <img src="./images/link_line.jpg" alt="" class="link-image" />
-            </div>
-            <div class="link-image-wrapper">
-              <img src="./images/link_blog.jpg" alt="" class="link-image" />
-            </div>
-            <div class="link-image-wrapper">
-              <img src="./images/link_twitter.jpg" alt="" class="link-image" />
+          <div class="link-area-wrapper">
+            <div class="link-area">
+              <div class="link-image-wrapper">
+                <a href="https://www.instagram.com/moreup_tomoko/">
+                  <img
+                    src="./images/link_instagram.jpg"
+                    alt=""
+                    class="link-image"
+                  />
+                </a>
+              </div>
+              <div class="link-image-wrapper">
+                <a href="https://lin.ee/c9Ox3fI">
+                  <img src="./images/link_line.jpg" alt="" class="link-image" />
+                </a>
+              </div>
+              <div class="link-image-wrapper">
+                <a href="https://ameblo.jp/moreup-tomoko/">
+                  <img src="./images/link_blog.jpg" alt="" class="link-image" />
+                </a>
+              </div>
+              <div class="link-image-wrapper">
+                <a href="https://twitter.com/moreuptomoko">
+                  <img
+                    src="./images/link_twitter.jpg"
+                    alt=""
+                    class="link-image"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
         <div class="company-wrapper">
-          <img src="./images/company.jpg" alt="" />
+          <div class="company-content-wrapper">
+            <div class="company-title">企業様からのご依頼も承ります</div>
+            <div class="company-main-content">
+              あらゆる方面の外見コンサルティングを行います。<br />
+              現在対象は女性のみとさせていただいておりますが<br />
+              内容によっては男性も可能ですのでご相談ください。
+            </div>
+            <div class="company-content">
+              <div class="company-content-left">
+                <実績> <br />
+                ・カラーマスク商品監修 <br />
+                ・カフェ診断イベント
+              </div>
+              <div class="company-content-right">
+                <対応可能なご依頼><br />
+                ○出張診断 ○新人研修<br />
+                ○セミナー講師 ○婚活向けコンサルティング 等
+              </div>
+            </div>
+            <div class="company-bottom">
+              <div class="company-content-left">
+                代表:TOMOKO<br />
+                <a
+                  href="mailto:moreuptomoko@gmail.com"
+                  style="text-decoration: underline"
+                  >moreuptomoko@gmail.com</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
-        <footer class="footer">
+        <div class="footer">
+          <div class="footer-title">
+            <div class="sub-title">Image Consulting Salon</div>
+            <div class="title">more up</div>
+          </div>
           <p>&copy;Copyright more up TOMOKO. All right reserved.</p>
-        </footer>
+        </div>
         <!-- フッターここまで -->
       </div>
     </div>

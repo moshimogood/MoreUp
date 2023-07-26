@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>TOP04_personal-FC2ホームページ</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.7.0/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1/slick/slick.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1/slick/slick-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1/slick/slick.min.js"></script>
+
+    <style>
+        /*ページ全体の構成*/
+        body{
+            background: #fff;
+            color: #444444;
+            font-size: 16px;
+            font-family: 'メイリオ', Meiryo, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Helvetica, Arial, 'ＭＳ Ｐゴシック', sans-serif;
+            line-height: 1.42857;
+            margin: 0;
+        }
+        a:link {
+            color: #999;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #999;
+            text-decoration: none;
+        }
+        a:visited {
+            color: #999;
+            text-decoration: none;
+        }
+        /* ヘッダーの設定 */
+        .header {/*ヘッダー全体の構成*/
+            z-index: 100;
+            padding: 24px 0;
+            width: 100%;
+        }
+        .header-title {/*サイト名*/
+            font-family: 'Abril Fatface', cursive;
+            color: #444;
+            font-weight: bold;
+            font-size: 2.4em;
+            border-bottom: #ccd1d9 solid 1px;
+            text-align: center;
+            position: relative;
+            margin: 0 auto 30px;
+            padding: 0 0 20px;
+         }
+         .header-title:after{/*サイト名下の線の設定*/
+            position: absolute;
+            bottom:-2px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border-bottom: 3px solid #444;
+            content:"";
+            width:120px;
+        }
+        /*画面サイズ960px以下のヘッダースタイル*/
+        @media screen and (max-width : 960px){
+            .header{/*ヘッダー全体の構成*/
+                padding: 24px 0px;
+                position: relative;
+                border-bottom: 1px solid #ccd1d9;
+                margin-bottom: 50px;
+                display: flex;
+                justify-content: space-between;
+            }
+            .header:after{/*サイト名下の線の設定*/
+                position: absolute;
+                bottom: -2px;
+                left: 30px;
+                border-bottom: 3px solid #444;
+                content: "";
+                width: 140px;
+            }
+            .header-title {/*サイト名*/
+                position: relative;
+                font-size: 30px;
+                text-align: left;
+                border:none;
+                padding: 0;
+                margin: 0 0 0 30px
+            }
+            .header-title:after{/*サイト名下の線の設定*/
+                display: none;
+            }
+        }
+        /* ナビゲーション */
+        .nav {/*ナビの構成*/
+            max-width: 960px;
+            height: auto;
+            margin: 0 auto;
+            padding: 21px 0 0;
+            background: #fff;
+            text-align: center;
+        }
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-list > li {
+            list-style-type: none;
+            padding: 0 20px;
+        }
+        .nav-list > li a {
+            display: block;
+            padding: 6px 12px;
+            color: #333;
+            text-decoration: none;
+        }
+        .nav-list > li a:hover {
+            color: #999;
+        }
+        .nav-list > li a.active {
+            border-bottom: #333 solid 2px;
+            color: #999;
+        }
+        /*画面サイズ960px以下のナビスタイル*/
+        @media screen and (min-width:960px) {
+            #nav-drawer{
+                display:none;
+            }
+        }
+        /*画面サイズ960px以下のスタイル*/
+        @media screen and (max-width:960px) {
+            .nav{
+                 display:none;
+            }
+            /*ハンバーガーメニューの設定*/
+            #nav-drawer {
+            position: relative;
+            margin: 0  0 0 auto;/*IE対策の右寄せ*/
+            }
+            .nav-unshown {/*チェックボックス等は非表示に*/
+            display:none;
+            }
+            #nav-open { /*アイコンのスペース*/
+            display: inline-block;
+            width: 30px;
+            margin: 0 30px 0 0;
+            }
+            /*ハンバーガーアイコンをCSSだけで表現*/
+            #nav-open span, #nav-open span:before, #nav-open span:after {
+                position: absolute;
+                height: 3px;/*線の太さ*/
+                width: 28px;/*長さ*/
+                background: #555;
+                display: block;
+                content: '';
+                cursor: pointer;
+            }
+            #nav-open span:before {
+                bottom: -8px;
+            }
+            #nav-open span:after {
+                bottom: -16px;
+            }
+            /*閉じる用の薄黒カバー*/
+            #nav-close {
+                display: none;/*はじめは隠しておく*/
+                position: fixed;
+                z-index: 99;
+                top: 0;/*全体に広がるように*/
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: black;
+                opacity: 0;
+                transition: .3s ease-in-out;
+            }
+            /*ハンバーガーメニュー展開後の中身*/
+            #nav-content {
+            overflow: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;/*最前面に*/
+            width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+            max-width: 330px;/*最大幅（調整してください）*/
+            height: 100%;
+            background: #fff;/*背景色*/
+            transition: .3s ease-in-out;/*滑らかに表示*/
+            -webkit-transform: translateX(-105%);
+            transform: translateX(-105%);/*左に隠しておく*/
+            }
+            /*チェックが入った後の表示*/
+            #nav-input:checked ~ #nav-close {
+            display: block;/*カバーを表示*/
+            opacity: .5;
+            }
+            #nav-input:checked ~ #nav-content {
+            -webkit-transform: translateX(0%);
+            transform: translateX(0%);/*中身を表示（右へスライド）*/
+            box-shadow: 6px 0 25px rgba(0,0,0,.15);
+            }
+            /*展開後のリストのスタイル*/
+            .nav-drawerList{
+                list-style: none;
+                text-align: center;
+                padding: 0;
+            }
+            .nav-drawerList-item{
+                line-height: 1.5;
+            }
+            .nav-drawerList-item > a{
+                display: block;
+                padding: 15px;
+            }
+        }
+         /*　スライドイメージ */
+        .mainImg{
+            margin-bottom: 80px;
+        }
+        /*スライドイメージ > スライダーの設定*/
+        .slider{
+        margin: 0 auto 80px;
+        padding: 0;
+        max-width: 960px;
+        height: auto;
+        }
+        .slider img{
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            font-family: 'object-fit: cover;'; /*IE対策*/
+        }
+        .slick-initialized,
+        .slick-slide{
+            max-height: 500px !important;
+        }
+        .slick-next,
+        .slick-prev{
+            display: none !important;
+        }
+        /*スライダー両サイドの矢印*/
+        .slick-prev:before,
+        .slick-next:before {
+            color: #64646c;
+        }
+        /*画面サイズ960px以下のスライダースタイル*/
+        @media screen and (max-width : 960px){
+            .mainImg{
+                margin-bottom:0 ;
+            }
+            .slider img{
+                height: 280px;
+                width: 100%;
+                object-fit: cover;
+                font-family: 'object-fit: cover;'; /*IE対策*/
+            }
+            .slider{
+                margin-bottom: 50px !important;
+            }
+        }
+        /*ページ全体の構成*/
+        .content{
+            max-width: 960px;
+            margin: 0 auto 190px;
+            text-align: center;
+        }
+        .content-title{
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+            margin: 0 auto 50px;
+            padding-bottom: 10px;
+            position: relative;
+        }
+        .content-title:after{
+            position: absolute;
+            bottom:-2px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border-bottom: 2px solid #444;
+            content:"";
+            width:140px;
+        }
+        .content-discription{
+            padding: 0 80px;
+            margin-bottom: 50px;
+            font-size: 14px;
+            line-height: 2.5;
+        }
+        /*more aout のbuttonスタイル*/
+        .content-button{
+            width: 170px;
+            margin: 0 auto;
+            padding: 5px 10px;
+            text-align: center;
+        }
+        .content-button > a{
+            background: #b8e1d9;
+            display: block;
+            max-width: 170px;
+            padding: 7px 15px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .content-button > a:hover{/*カーソルが触れているときの設定*/
+            opacity: 0.5;
+        }
+        /*画面サイズ960px以下のボタンスタイル*/
+        @media screen and (max-width : 960px){
+            .content{
+                margin-bottom: 100px;
+            }
+        }
+        /*画面サイズ600px以下のボタンスタイル*/
+        @media screen and (max-width : 600px){
+            .content-discription{
+            padding: 0 30px;
+            margin-bottom: 50px;
+            font-size: 14px;
+            }
+            .content-button{
+                width: auto;
+                margin: 0 auto;
+                padding: 0 30px;
+                line-height: 1.2;
+            }
+            .content-button > a{
+                display: block;
+                max-width: 100%;
+                background: #b8e1d9;
+                padding: 15px;
+                margin: 0 auto;
+            }
+        }
+        /*メイン記事*/
+        .content-list{
+            max-width: 960px;
+            padding: 0 20px;
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .content-listItem{
+            width: 250px;
+            height: 250px;
+            list-style: none;
+            position: relative;	/* 相対位置指定 */
+        }
+        .content-listItem img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            font-family: 'object-fit: cover;'; /*IE対策*/
+        }
+        .content-listItemMask {/*マスクの設定*/
+            width: 100%;
+            height: 100%;
+            position: absolute;	/* 絶対位置指定 */
+            top: 0;
+            left: 0;
+            opacity: 0;	/* マスクを表示しない */
+            background-color:	rgba(0,0,0,0.4);	/* マスクは半透明 */
+            -webkit-transition:	all 0.4s ease;
+            transition:		all 0.4s ease;
+        }
+        .content-listItem:hover .content-listItemMask {
+            opacity:2;	/* マスクを表示する */
+        }
+        .content-listItemMask-caption{/*マスクの上の*/
+            font-size: 14px;
+            text-align: left;
+            position: absolute;
+            padding: 10px;
+            bottom: 0;
+            color:#fff;
+        }
+        @media screen and (max-width : 960px){
+            .content-list{
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+            }
+            .content-listLast{
+            margin-bottom: 50px;
+            }
+            .content-listItem{
+                width: 300px;
+                height: 300px;
+                margin:0 auto 10px;
+            }
+            .content-button{
+                width: auto;
+                margin: 0 auto;
+                padding: 0 30px;
+                line-height: 1.2;
+            }
+            .content-button > a{
+                display: block;
+                max-width: 100%;
+                background: #b8e1d9;
+                padding: 15px;
+                margin: 0 auto;
+            }
+        }
+        /*プロフィール*/
+        .content-profile{
+            max-width: 960px;
+            display: flex;
+            border: 1px solid #ccc;
+        }
+        .content-profileImg{/*プロフィール写真*/
+            width: 380px;
+            height: auto;
+            object-fit: cover;
+            font-family: 'object-fit: cover;'; /*IE対策*/
+        }
+        .content-profileImg>img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            font-family: 'object-fit: cover;'; /*IE対策*/
+        }
+        .content-profileText-name{/*プロフィール名前*/
+            font-weight: bold;
+            line-height: 0;
+        }
+        .content-profileText{/*プロフィールテキスト*/
+            margin: 0 auto;
+            padding: 38px 0;
+            text-align: left;
+            font-size: 14px;
+        }
+        .content-profileText-self{
+            margin: 30px 0;
+        }
+        .content-profileText-button{
+            font-size: 16px;
+        }
+        /*画面サイズ960ｐｘ以下のプロフィール部分のスタイル*/
+        @media screen and (max-width: 960px){
+            .content-profile{
+                display: block;
+                border: none;
+            }
+            .content-profileImg{
+                max-width: 360px;
+                margin: 0 auto;
+            }
+            .content-profileText-name{
+                padding: 0 30px;
+            }
+            .content-profileText{
+                text-align: center;
+            }
+        }
+        /*フッター*/ /*注釈権利*/
+        .footer{
+            border-top: 1px solid #ccc;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 12px;
+        }
+        /*SNSボタン*/
+        .footer-SNSicon{
+            margin: 0 auto 10px;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        /*SNSボタン-色サイズ*/
+        .snsIcon{
+            width: 48px;
+            margin: 0 0 0 10px;
+        }
+        @media(max-width: 960px){
+            .footer-wrapGroupSNSicon{
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .footer-wrapGroupSNSicon-group{
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body id="top">
+    <div class="header">
+        <div class="header-title">SITE NAME</div><!--サイトの名前-->
+        <div class="nav">
+            <ul class="nav-list">
+                <li><a href="#">home</a></li>
+                <li><a href="#">menu01</a></li><!--ナビ-->
+                <li><a href="#">menu02</a></li><!--ナビ-->
+                <li><a href="#">menu03</a></li><!--ナビ-->
+            </ul>
+        </div>
+        <div id="nav-drawer"><!--960px以下のナビ-->
+            <input id="nav-input" type="checkbox" class="nav-unshown" value="">
+            <label id="nav-open" for="nav-input"><span></span></label>
+            <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+            <div id="nav-content">
+                <ul class="nav-drawerList">
+                    <li class="nav-drawerList-item"><a href="#">home</a></li>
+                    <li class="nav-drawerList-item"><a href="#">menu01</a></li><!--ナビ-->
+                    <li class="nav-drawerList-item"><a href="#">menu02</a></li><!--ナビ-->
+                    <li class="nav-drawerList-item"><a href="#">menu03</a></li><!--ナビ-->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--スライダーのイメージ-->
+    <div class="mainImg">
+        <ul class="slider">
+            <li><a href="#"><img src="//web.fc2.com/fc2img/designtemplates/common/img_960-300.png" alt="image01"></a></li>
+            <li><a href="#"><img src="//web.fc2.com/fc2img/designtemplates/common/img_960-300.png" alt="image01"></a></li>
+            <li><a href="#"><img src="//web.fc2.com/fc2img/designtemplates/common/img_960-300.png" alt="image01"></a></li>
+        </ul>
+    </div>
+    <!--概要部分-->
+    <div class="content">
+        <div class="content-title">menu01</div>
+        <div class="content-discription">サービスの内容や、自己紹介・サイト内容・概要などを記載しましょう。このコメントはサンプルです。文字のサイズやレイアウトを確認してください。サービスの内容や、自己紹介・サイト内容・概要などを記載しましょう。このコメントはサンプルです。文字のサイズやレイアウトを確認してください。</div>
+        <div class="content-button"><a href="#">more about</a></div>
+    </div>
+    <!--メイン・写真と記事の内容-->
+    <div class="content">
+        <div class="content-title">menu02</div>
+        <ul class="content-list">
+            <li class="content-listItem">
+                <a href="#">
+                    <img src="//web.fc2.com/fc2img/designtemplates/common/img_250-250.png" alt="image01">
+                    <div class="content-listItemMask">
+                        <div class="content-listItemMask-caption">記事のタイトルなど<br>記事の内容を記載してください。記事の内容を記載してください。記事の内容を記載してください。
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="content-listItem ">
+                <a href="#">
+                    <img src="//web.fc2.com/fc2img/designtemplates/common/img_250-250.png" alt="image01">
+                    <div class="content-listItemMask">
+                        <div class="content-listItemMask-caption">記事のタイトルなど<br>記事の内容を記載してください。記事の内容を記載してください。記事の内容を記載してください。
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="content-listItem">
+                <a href="#">
+                    <img src="//web.fc2.com/fc2img/designtemplates/common/img_250-250.png" alt="image01">
+                    <div class="content-listItemMask">
+                        <div class="content-listItemMask-caption">記事のタイトルなど<br>記事の内容を記載してください。記事の内容を記載してください。記事の内容を記載してください。
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <ul class="content-list content-listLast">
+            <li class="content-listItem">
+                <a href="#">
+                    <img src="//web.fc2.com/fc2img/designtemplates/common/img_250-250.png" alt="image01">
+                    <div class="content-listItemMask">
+                        <div class="content-listItemMask-caption">記事のタイトルなど<br>記事の内容を記載してください。記事の内容を記載してください。記事の内容を記載してください。
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="content-listItem">
+                <a href="#">
+                    <img src="//web.fc2.com/fc2img/designtemplates/common/img_250-250.png" alt="image01">
+                    <div class="content-listItemMask">
+                        <div class="content-listItemMask-caption">記事のタイトルなど<br>記事の内容を記載してください。記事の内容を記載してください。記事の内容を記載してください。
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="content-listItem">
+                <a href="#">
+                    <img src="//web.fc2.com/fc2img/designtemplates/common/img_250-250.png" alt="image01">
+                    <div class="content-listItemMask">
+                        <div class="content-listItemMask-caption">記事のタイトルなど<br>記事の内容を記載してください。記事の内容を記載してください。記事の内容を記載してください。
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <div class="content-button"><a href="#">more about</a></div>
+    </div>
+    <!--プロフィール-->
+    <div class="content">
+        <div class="content-title">menu03</div>
+        <div class="content-profile">
+            <div class="content-profileImg">
+                <img src="//web.fc2.com/fc2img/designtemplates/common/img_300-200.png" alt="">
+            </div>
+            <div class="content-profileText">
+                <p class="content-profileText-name">YOUR NAME</p>
+                <div class="content-profileText-self">
+                    趣味・自己紹介・経歴などを記載しましょう<br>
+                    趣味・自己紹介・経歴などを記載しましょう<br>
+                    趣味・自己紹介・経歴などを記載しましょう<br>
+                </div>
+                <div class="content-button content-profileText-button"><a href="#">more about</a></div>
+            </div>
+        </div>
+    </div>
+    <!--フッター-->
+    <div class="footer">
+        <ul class="footer-SNSicon">
+            <li><a href="#"><img src="//web.fc2.com/fc2img/designtemplates/common/icon-tw.svg" class="snsIcon" alt="Twitter"></a></li>
+            <li><a href="#"><img src="//web.fc2.com/fc2img/designtemplates/common/icon-ig.svg" class="snsIcon" alt="Instagram"></a></li>
+            <li><a href="#"><img src="//web.fc2.com/fc2img/designtemplates/common/icon-fb.svg" class="snsIcon" alt="facebook"></a></li>
+        </ul>
+        <div class="footer-text">ホームページに関する注意事項など入ります</div>
+        <div class="footer-copyright">Copyright &copy; 20xx xxxxx.</div>
+    </div>
+    <!--スライダー-->
+    <script>
+    $('.slider').slick({
+        autoplay:true,
+        autoplaySpeed:8000,
+        dots:true,
+    });
+    </script>
+    <!--objedt-fit（IE対策）-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.3/ofi.js"></script>
+    <script>objectFitImages();</script>
+</body>
+
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        【神戸】パーソナルカラー診断・骨格診断・顔タイプ診断・メイクレッスン　イメージアップサロンmore
+        up
+    </title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="description"
+        content="20代アドバイザーがパーソナルカラー診断・骨格診断・顔タイプ診断®をもとになりたいイメージに近づけるようアドバイスします。オンリーワンのレッスンで美しく、内側から輝く女性に♪" />
+    <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script type="text/javascript">
+        $(window).on("load", function () {
+            $("#splash").fadeOut("slow");
+        });
+        $(window).scroll(function () {
+            $(".header").toggleClass("inner", window.scrollY > 100);
+            $(".title").toggleClass("inner", window.scrollY > 100);
+            $(".sub-title").toggleClass("inner", window.scrollY > 100);
+        });
+        $(document).ready(function () {
+            $(".slider").bxSlider({
+                auto: true,
+                pause: 5000,
+            });
+            function showLoading() {
+                $("#splash").fadeIn();
+            }
+            function hideLoading() {
+                $("#splash").fadeOut();
+            }
+
+            setTimeout(hideLoading, 500);
+
+            showLoading();
+        });
+        jQuery(function ($) {
+            var fadeIn = $(".fade-in");
+            $(window).scroll(function () {
+                $(fadeIn).each(function () {
+                    var offset = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll > offset - windowHeight + 200) {
+                        $(this).addClass("scroll-in");
+                    }
+                });
+            });
+        });
+        $(function () {
+            $(".nav-drawer").on("click", function () {
+                $(".nav-drawer").toggleClass("close"); // .btnにcloseというクラスが追加される
+                $(".nav-content").toggleClass("close");
+                $(".bx-viewport .slider").toggleClass("close");
+                $(".wrapper").toggleClass("close");
+                $("header").toggleClass("close");
+                $(".MuAbout-header-img").toggleClass("close");
+                $("body").toggleClass("close");
+                $("nav").fadeToggle(500); // navの表示・非表示切り替わる
+                $(".title").toggleClass("black"); 
+                $(".sub-title").toggleClass("black");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="splash">
+        <div id="splash_logo">
+            <div class="sub-title-logo" style="color: grey">
+                Image Consulting Salon
+            </div>
+            <div class="title-logo" style="color: grey">more up</div>
+            <div class="load-circle"></div>
+        </div>
+    </div>
+    <!-- ヘッダー -->
+    <div class="wrapper" style="position: relative;">
+        <header class="header">
+            <div class="header-wrapper">
+                <div class="header-title-wrapper">
+                    <a href="index.html">
+                        <div class="sub-title">Image Consulting Salon</div>
+                        <div class="title">more up</div>
+                    </a>
+                </div>
+                <div class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="MuAbout.html">more upについて</a></li>
+                        <li><a href="MuMenu.html">メニュー</a></li>
+                        <li><a href="MuReserve.html">ご予約</a></li>
+                        <li><a href="MuFlow.html">診断の流れ</a></li>
+                        <li><a href="MuReport.html">お客様レポート</a></li>
+                        <li><a href="MuAccess.html">アクセス</a></li>
+                    </ul>
+                </div>
+                <div class="nav-drawer">
+                    <span class="bar bar-top"></span>
+                    <span class="bar bar-middle"></span>
+                    <span class="bar bar-bottom"></span>
+                </div>
+                <div class="nav-content">
+                    <ul class="nav-drawerList">
+                        <li class="nav-drawerList-item"><a href="index.html">HOME</a></li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuAbout.html">more upについて</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuMenu.html">メニュー</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuReserve.html">ご予約</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuFlow.html">診断の流れ</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuReport.html">お客様レポート</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuAccess.html">アクセス</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <img src="./images/flow.jpg" alt="" class="MuAbout-header-img" />
+    </div>
+    <div class="about-salon">
+        <div style="font-size: 2rem;">FLOW</div>
+        <div style="font-size: 1.2rem; font-family: hannari">診断の流れ</div>
+    </div>
+    <!-- ヘッダーここまで -->
+    <!-- メイン -->
+    <div class="wrapper">
+        <div class="menu-top">
+            <div class="flow-top-title">
+                <div>\パーフェクト診断コース/</div>
+            </div>
+        </div>
+        <div class="flow-wrapper">
+            <div class="flow-main">
+                <div class="flow-title fade-in fade-in-up">
+                    <div class="flow-num">1</div>
+                    <div class="flow-main-title">
+                        カウンセリング
+                    </div>
+                </div>
+                <div class="flow-content fade-in fade-in-up">
+                    <div style="margin: 1rem 0 ">
+                        まずはカウンセリングシートでお客様のお悩みやなりたいイメージについてお聞きします。診断後のゴールを設定し、それに向かって一緒に頑張らせていただきます!</div>
+                </div>
+                <img src="./images/flow1.jpg" class="fade-in fade-in-up">
+            </div>
+            <div class="flow-main">
+                <div class="flow-title fade-in fade-in-up">
+                    <div class="flow-num">2</div>
+                    <div class="flow-main-title">
+                        顔タイプ診断
+                    </div>
+                </div>
+                <div class="flow-content fade-in fade-in-up">
+                    <div style="margin: 1rem 0 ">8タイプについて説明後に診断していきます。今回初めて知ったお客様でもしっかり説明するのでご安心ください♪メイクは普段通りでお願いいたします。
+                    </div>
+                </div>
+                <img src="./images/flow2.jpg" class="fade-in fade-in-up">
+            </div>
+            <div class="flow-main">
+                <div class="flow-title fade-in fade-in-up">
+                    <div class="flow-num">3</div>
+                    <div class="flow-main-title">
+                        骨格診断
+                    </div>
+                </div>
+                <div class="flow-content fade-in fade-in-up">
+                    <div style="margin: 1rem 0 ">
+                        3タイプについて説明後に診断していきます。体型が分かりにくい服装の場合はこちらで用意しているタンクトップとハーフパンツに着替えていただきます。診断結果をもとに似合う素材・形・着こなしをご提案します。
+                    </div>
+                </div>
+                <img src="./images/flow3.jpg" class="fade-in fade-in-up">
+            </div>
+            <div class="flow-main">
+                <div class="flow-title fade-in fade-in-up">
+                    <div class="flow-num">4</div>
+                    <div class="flow-main-title">
+                        骨格診断
+                    </div>
+                </div>
+                <div class="flow-content fade-in fade-in-up">
+                    <div style="margin: 1rem 0 ">
+                        肌・瞳・髪の色を細かく分析し、カラードレープをあてて最もお似合いの色を見つけていきます。メイクやカラコンはオフしていただくとより正確な結果が得られます。メイク落としシートのご用意はありますがコンタクトケースはご持参ください。
+                    </div>
+                </div>
+                <img src="./images/flow4.png" class="fade-in fade-in-up">
+            </div>
+            <div class="flow-main">
+                <div class="flow-title fade-in fade-in-up">
+                    <div class="flow-num">5</div>
+                    <div class="flow-main-title">
+                        メイクアドバイス(オプション)
+                    </div>
+                </div>
+                <div class="flow-content fade-in fade-in-up">
+                    <div style="margin: 1rem 0 ">
+                        診断結果をもとにお似合いになるメイクや髪型をご提案し、セルフメイクの練習をします。仕事、デート、女子会、お見合いなどシチュエーションごとにメイクを変える楽しさもお伝えします♪</div>
+                </div>
+                <img src="./images/flow5.jpg" class="fade-in fade-in-up">
+            </div>
+            <div class="flow-main">
+                <div class="flow-title fade-in fade-in-up">
+                    <div class="flow-num">6</div>
+                    <div class="flow-main-title">
+                        アドバイスシートプレゼント
+                    </div>
+                </div>
+                <div class="flow-content fade-in fade-in-up">
+                    <div style="margin: 1rem 0 ">
+                        すべてのメニューにお渡し資料をご用意しております。診断後にアドバイスシートにメモをとっていただき、オリジナルのアドバイスシートを作っていきます。</div>
+                </div>
+                <img src="./images/flow6.jpg" class="fade-in fade-in-up">
+            </div>
+            <div class="flow-main">
+                <div class="flow-title fade-in fade-in-up">
+                    <div class="flow-num">7</div>
+                    <div class="flow-main-title">
+                        LINE相談アフターフォロー
+                    </div>
+                </div>
+                <div class="flow-content fade-in fade-in-up">
+                    <div style="margin: 1rem 0 ">
+                        診断後に相談したいことがある場合、1ヶ月間無料で公式LINEのチャットで質問を受け付けています。24時間以内にお返事しますので期間中はお気軽に何度でもご相談ください♪ウェディング診断コースのお客様のアフターフォロー期間は無期限です!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flow-link-area fade-in fade-in-up">
+            <div class="flow-link-area-title">
+                <div>先に公式LINEにご登録<br>
+                    いただくとスムーズです</div>
+                <img src="./images/hukidasi.jpg" alt="" style="width: 50%;">
+            </div>
+            <div class="flow-link-main">
+                <a href="https://lin.ee/c9Ox3fI"><img src="./images/line.jpg" alt="" class="flow-link-icon"></a>
+                <div class="flow-link-content">
+                    予約申請後LINEにお名前をご入力ください<br />
+                    お支払い方法をお送りします
+                </div>
+            </div>
+            <div class="flow-link-main">
+                <a href="https://www.instagram.com/moreup_tomoko/"><img src="./images/instagram.jpg" alt=""
+                        class="flow-link-icon"></a>
+                <div class="flow-link-content">
+                    予約開始はストーリーズでお知らせします<br>
+                    サロンの様子なども紹介しています♪
+                </div>
+            </div>
+        </div>
+        <div class="kind-button-wrapper">
+            <a class="kind-button" href="https://reserva.be/moreup">予約サイト</a>
+        </div>
+        <div class="link-area-wrapper">
+            <div class="link-area">
+                <div class="link-image-wrapper">
+                    <a href="https://www.instagram.com/moreup_tomoko/">
+                        <img src="./images/link_instagram.jpg" alt="" class="link-image" />
+                    </a>
+                </div>
+                <div class="link-image-wrapper">
+                    <a href="https://lin.ee/c9Ox3fI">
+                        <img src="./images/link_line.jpg" alt="" class="link-image" />
+                    </a>
+                </div>
+                <div class="link-image-wrapper">
+                    <a href="https://ameblo.jp/moreup-tomoko/">
+                        <img src="./images/link_blog.jpg" alt="" class="link-image" />
+                    </a>
+                </div>
+                <div class="link-image-wrapper">
+                    <a href="https://twitter.com/moreuptomoko">
+                        <img src="./images/link_twitter.jpg" alt="" class="link-image" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-title">
+                <div class="sub-title">Image Consulting Salon</div>
+                <div class="title">more up</div>
+            </div>
+            <p>&copy;Copyright more up TOMOKO. All right reserved.</p>
+        </div>
+        <!-- フッターここまで -->
+    </div>
+    </div>
+</body>
+
+</html>

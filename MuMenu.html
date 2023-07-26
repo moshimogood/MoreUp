@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        【神戸】パーソナルカラー診断・骨格診断・顔タイプ診断・メイクレッスン　イメージアップサロンmore
+        up
+    </title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="description"
+        content="20代アドバイザーがパーソナルカラー診断・骨格診断・顔タイプ診断®をもとになりたいイメージに近づけるようアドバイスします。オンリーワンのレッスンで美しく、内側から輝く女性に♪" />
+    <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script type="text/javascript">
+        $(window).on("load", function () {
+            $("#splash").fadeOut("slow");
+        });
+        $(window).scroll(function () {
+            $(".header").toggleClass("inner", window.scrollY > 100);
+            $(".title").toggleClass("inner", window.scrollY > 100);
+            $(".sub-title").toggleClass("inner", window.scrollY > 100);
+        });
+        $(document).ready(function () {
+            $(".slider").bxSlider({
+                auto: true,
+                pause: 5000,
+            });
+            function showLoading() {
+                $("#splash").fadeIn();
+            }
+            function hideLoading() {
+                $("#splash").fadeOut();
+            }
+
+            setTimeout(hideLoading, 500);
+
+            showLoading();
+        });
+        jQuery(function ($) {
+            var fadeIn = $(".fade-in");
+            $(window).scroll(function () {
+                $(fadeIn).each(function () {
+                    var offset = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll > offset - windowHeight + 200) {
+                        $(this).addClass("scroll-in");
+                    }
+                });
+            });
+        });
+        $(function () {
+            $(".nav-drawer").on("click", function () {
+                $(".nav-drawer").toggleClass("close"); // .btnにcloseというクラスが追加される
+                $(".nav-content").toggleClass("close");
+                $(".bx-viewport .slider").toggleClass("close");
+                $(".wrapper").toggleClass("close");
+                $("header").toggleClass("close");
+                $(".MuAbout-header-img").toggleClass("close");
+                $("body").toggleClass("close");
+                $("nav").fadeToggle(500); // navの表示・非表示切り替わる
+                $(".title").toggleClass("black");
+          $(".sub-title").toggleClass("black");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="splash">
+        <div id="splash_logo">
+            <div class="sub-title-logo" style="color: grey">
+                Image Consulting Salon
+            </div>
+            <div class="title-logo" style="color: grey">more up</div>
+            <div class="load-circle"></div>
+        </div>
+    </div>
+    <!-- ヘッダー -->
+    <div class="wrapper" style="position: relative;">
+        <header class="header">
+            <div class="header-wrapper">
+                <div class="header-title-wrapper">
+                    <a href="index.html">
+                        <div class="sub-title">Image Consulting Salon</div>
+                        <div class="title">more up</div>
+                    </a>
+                </div>
+                <div class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="MuAbout.html">more upについて</a></li>
+                        <li><a href="MuMenu.html">メニュー</a></li>
+                        <li><a href="MuReserve.html">ご予約</a></li>
+                        <li><a href="MuFlow.html">診断の流れ</a></li>
+                        <li><a href="MuReport.html">お客様レポート</a></li>
+                        <li><a href="MuAccess.html">アクセス</a></li>
+                    </ul>
+                </div>
+                <div class="nav-drawer">
+                    <span class="bar bar-top"></span>
+                    <span class="bar bar-middle"></span>
+                    <span class="bar bar-bottom"></span>
+                </div>
+                <div class="nav-content">
+                    <ul class="nav-drawerList">
+                        <li class="nav-drawerList-item"><a href="index.html">HOME</a></li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuAbout.html">more upについて</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuMenu.html">メニュー</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuReserve.html">ご予約</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuFlow.html">診断の流れ</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuReport.html">お客様レポート</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuAccess.html">アクセス</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <img src="./images/menu_header.jpg" alt="" class="MuAbout-header-img" />
+    </div>
+    <div class="about-salon">
+        <div style="font-size: 2rem;">MENU</div>
+        <div style="font-size: 1.2rem; font-family: hannari">メニュー</div>
+    </div>
+    <!-- ヘッダーここまで -->
+    <!-- メイン -->
+    <div class="wrapper">
+        <div class="menu-top">
+            <div class="menu-top-title">
+                <div>お得な割引特典</div>
+            </div>
+            <div class="menu-main fade-in fade-in-up">
+                <div>各種割引で500円オフ！</div>
+                <div class="menu-off-list">
+                    <div>●平日割引</div>
+                    <div>●SNS掲載許可割引</div>
+                    <div>●リピーター割引</div>
+                    <div>●ご紹介でご予約の方</div>
+                    <div>
+                        すべて併用可能です。予約申請後にLINEでお申し出ください。ペア診断をご希望の方は予約時に人数をお伝えください。3名まで同時診断可能です。人数とメニューの関係で日程を変更いただく可能性がございます。
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cource-wrapper">
+            <div class="cource-main">
+                <div class="cource-title fade-in fade-in-up">
+                    <div class="cource-main-sub">\人気No.1/</div>
+                    <div class="cource-main-title">
+                        パーフェクト診断コース
+                    </div>
+                    <div class="cource-main-sub-bottom">¥33,000/3h ペアの場合¥32,000</div>
+                </div>
+                <div class="cource-list fade-in fade-in-up">
+                    <div>12タイプパーソナルカラー診断</div>
+                    <div>骨格診断</div>
+                    <div>顔タイプ診断</div>
+                    <div>服・コスメ・髪型等の総合アドバイス</div>
+                    <div>★アドバイスシートプレゼント(8ページ)</div>
+                    <div>★1ヶ月間LINE相談無料</div>
+                    <div>★後日オリジナルコーデ集プレゼント(3ページ)</div>
+                    <div style="margin: 1rem 0 ">
+                        印象UPするファッションをトータルで学べます。一気に垢抜けたい方、過去最高の自分に変身したい方におすすめ!似合うメイクが知りたい方はオプションでメイクアドバイスを追加ください♪パーフェクト診断コース限定の後日資料はお客様のなりたいイメージやライフスタイルを考慮し完全オリジナルで作成します!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cource-wrapper">
+            <div class="cource-main">
+                <div class="cource-title fade-in fade-in-up">
+                    <div class="cource-main-title">
+                        12タイプパーソナルカラー診断
+                    </div>
+                    <div class="cource-main-sub-bottom">¥14,000/1.5h ペアの場合¥13,000</div>
+                </div>
+                <div class="cource-list fade-in fade-in-up">
+                    <div>12タイプパーソナルカラー診断</div>
+                    <div>カラーコーデ・コスメ・髪色等のアドバイス</div>
+                    <div>★アドバイスシートプレゼント(4ページ)</div>
+                    <div>★1ヶ月間LINE相談無料</div>
+                    <div style="margin: 1rem 0 ">肌をキレイに見せる色・印象UPする色を学べます。当サロ
+                        ンは従来の4シーズン分類をさらに細分化した12タイプパーソナルカラー診断を行い、より詳細に似合う色の特徴を分析します。ベストカラー・2ndシーズン・苦手な色の使い方まで丁寧にお伝えします。いつも同じような色のコスメや無難な色ばかり選んでしまう人におすすめです!
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cource-wrapper">
+            <div class="cource-main">
+                <div class="cource-title fade-in fade-in-up">
+                    <div class="cource-main-title">
+                        顔タイプ診断R
+                    </div>
+                    <div class="cource-main-sub-bottom">¥8,800/1.5h ペアの場合¥8,300</div>
+                </div>
+                <div class="cource-list fade-in fade-in-up">
+                    <div>顔タイプ診断</div>
+                    <div>服・アクセサリー・髪型等のアドバイス</div>
+                    <div>★アドバイスシートプレゼント(2ページ)</div>
+                    <div>★1ヶ月間LINE相談無料</div>
+                    <div style="margin: 1rem 0 ">
+                        お似合いのブランドやアクセサリー選び、髪型など総合的な「似合う」を学べます。垢抜けておしゃれになりたい方におすすめです!似合うメイクが知りたい方はメイクアドバイスのオプションを追加してください♪
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cource-wrapper">
+            <div class="cource-main">
+                <div class="cource-title fade-in fade-in-up">
+                    <div class="cource-main-title">
+                        骨格+顔タイプ診断R
+                    </div>
+                    <div class="cource-main-sub-bottom">¥19,000/2.0h ペアの場合¥18,000</div>
+                </div>
+                <div class="cource-list fade-in fade-in-up">
+                    <div>骨格診断</div>
+                    <div>顔タイプ診断</div>
+                    <div>服・アクセサリー・髪型等のアドバイス</div>
+                    <div>★アドバイスシートプレゼント(4ページ)</div>
+                    <div>★1ヶ月間LINE相談無料</div>
+                    <div style="margin: 1rem 0 ">
+                        骨格診断でスタイルが良く見える服選びを、顔タイプ診断で垢抜ける服やアクセサリー選びを学べます。お買い物上手になりたい方、おしゃれになりたい方におすすめです!</div>
+                </div>
+            </div>
+        </div>
+        <div class="cource-wrapper">
+            <div class="cource-main">
+                <div class="cource-title fade-in fade-in-up">
+                    <div class="cource-main-title">
+                        メイクアドバイス
+                    </div>
+                    <div class="cource-main-sub-bottom">¥9,900/1.5h ペアの場合¥9,400</div>
+                </div>
+                <div class="cource-list fade-in fade-in-up">
+                    <div>顔分析</div>
+                    <div>魅力を引き出し美人に見えるセルフメイク</div>
+                    <div>★アドバイスシートプレゼント(3ページ)</div>
+                    <div>★1ヶ月間LINE相談無料</div>
+                    <div style="margin: 1rem 0 ">
+                        診断結果をもとに魅力を引き出すメイクを実践的に学べます。眉毛の形・アイシャドウやチークの塗り方などポイントメイクアドバイスが基本です。当サロンで顔タイプ診断を受けたことがある方のみお選びいただけます。パーフェクト診断コースのオプションとしても人気です♪
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="./images/menu-wedding.jpg" style="margin: 2rem 0;" id="wedding">
+        <div class="cource-wrapper">
+            <div class="cource-main">
+                <div class="cource-title fade-in fade-in-up">
+                    <div class="cource-main-title">
+                        ウェディング診断コース
+                    </div>
+                    <div class="cource-main-sub-bottom">¥44,000/3.0h ペアの場合¥43,000
+                    </div>
+                </div>
+                <div class="cource-list fade-in fade-in-up">
+                    <div>パーフェクト診断コースの内容</div>
+                    <div>+ドレスコーディネートアドバイス</div>
+                    <div>★アドバイスシートプレゼント(4ページ)</div>
+                    <div>★無期限LINE相談フォロー付き</div>
+                    <div style="margin: 1rem 0 ">
+                        ドレス選びにお困りの花嫁様限定メニュー。なりたい花嫁像や会場の雰囲気を考慮し、ドレス選びのポイントを丁寧にお伝えします。最高にキレイな花嫁になりたい方はぜひ受講ください!</div>
+                </div>
+            </div>
+        </div>
+        <div class="wedding-button-wrapper">
+            <div>素敵な花嫁様の</div>
+            <div>ウェディングレポートはこちら♪</div>
+        </div>
+        <div class="kind-button-wrapper" style="margin-top: 0.5rem;">
+            <a class="kind-button comming-soon">Comming Soon...</a>
+        </div>
+        <div class="kind-button-wrapper">
+            <a class="kind-button" href="./MuReserve.html">ご予約はこちら</a>
+        </div>
+        <div class="link-area-wrapper">
+            <div class="link-area">
+                <div class="link-image-wrapper">
+                    <a href="https://www.instagram.com/moreup_tomoko/">
+                        <img src="./images/link_instagram.jpg" alt="" class="link-image" />
+                    </a>
+                </div>
+                <div class="link-image-wrapper">
+                    <a href="https://lin.ee/c9Ox3fI">
+                        <img src="./images/link_line.jpg" alt="" class="link-image" />
+                    </a>
+                </div>
+                <div class="link-image-wrapper">
+                    <a href="https://ameblo.jp/moreup-tomoko/">
+                        <img src="./images/link_blog.jpg" alt="" class="link-image" />
+                    </a>
+                </div>
+                <div class="link-image-wrapper">
+                    <a href="https://twitter.com/moreuptomoko">
+                        <img src="./images/link_twitter.jpg" alt="" class="link-image" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-title">
+                <div class="sub-title">Image Consulting Salon</div>
+                <div class="title">more up</div>
+            </div>
+            <p>&copy;Copyright more up TOMOKO. All right reserved.</p>
+        </div>
+        <!-- フッターここまで -->
+    </div>
+    </div>
+</body>
+
+</html>

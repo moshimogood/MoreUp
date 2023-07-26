@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        【神戸】パーソナルカラー診断・骨格診断・顔タイプ診断・メイクレッスン　イメージアップサロンmore
+        up
+    </title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="description"
+        content="20代アドバイザーがパーソナルカラー診断・骨格診断・顔タイプ診断®をもとになりたいイメージに近づけるようアドバイスします。オンリーワンのレッスンで美しく、内側から輝く女性に♪" />
+    <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script type="text/javascript">
+        $(window).on("load", function () {
+            $("#splash").fadeOut("slow");
+        });
+        $(window).scroll(function () {
+            $(".header").toggleClass("inner", window.scrollY > 100);
+        $(".title").toggleClass("inner", window.scrollY > 100);
+        $(".sub-title").toggleClass("inner", window.scrollY > 100);
+        });
+        $(document).ready(function () {
+            $(".slider").bxSlider({
+                auto: true,
+                pause: 5000,
+            });
+            function showLoading() {
+                $("#splash").fadeIn();
+            }
+            function hideLoading() {
+                $("#splash").fadeOut();
+            }
+
+            setTimeout(hideLoading, 500);
+
+            showLoading();
+        });
+        jQuery(function ($) {
+            var fadeIn = $(".fade-in");
+            $(window).scroll(function () {
+                $(fadeIn).each(function () {
+                    var offset = $(this).offset().top;
+                    var scroll = $(window).scrollTop();
+                    var windowHeight = $(window).height();
+                    if (scroll > offset - windowHeight + 200) {
+                        $(this).addClass("scroll-in");
+                    }
+                });
+            });
+        });
+        $(function () {
+            $(".nav-drawer").on("click", function () {
+                $(".nav-drawer").toggleClass("close"); // .btnにcloseというクラスが追加される
+                $(".nav-content").toggleClass("close");
+                $(".bx-viewport .slider").toggleClass("close");
+                $(".wrapper").toggleClass("close");
+                $("header").toggleClass("close");
+                $(".MuAbout-header-img").toggleClass("close");
+                $("body").toggleClass("close");
+                $("nav").fadeToggle(500); // navの表示・非表示切り替わる
+                $(".title").toggleClass("black");
+          $(".sub-title").toggleClass("black");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="splash">
+        <div id="splash_logo">
+            <div class="sub-title-logo" style="color: grey">
+                Image Consulting Salon
+              </div>
+              <div class="title-logo" style="color: grey">more up</div>
+            <div class="load-circle"></div>
+        </div>
+    </div>
+    <!-- ヘッダー -->
+    <div class="wrapper" style="position: relative">
+        <header class="header">
+            <div class="header-wrapper">
+                <div class="header-title-wrapper">
+                    <a href="index.html">
+                        <div class="sub-title">Image Consulting Salon</div>
+                        <div class="title">more up</div>
+                    </a>
+                </div>
+                <div class="nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="MuAbout.html">more upについて</a></li>
+                        <li><a href="MuMenu.html">メニュー</a></li>
+                        <li><a href="MuReserve.html">ご予約</a></li>
+                        <li><a href="MuFlow.html">診断の流れ</a></li>
+                        <li><a href="MuReport.html">お客様レポート</a></li>
+                        <li><a href="MuAccess.html">アクセス</a></li>
+                    </ul>
+                </div>
+                <div class="nav-drawer">
+                    <span class="bar bar-top"></span>
+                    <span class="bar bar-middle"></span>
+                    <span class="bar bar-bottom"></span>
+                </div>
+                <div class="nav-content">
+                    <ul class="nav-drawerList">
+                        <li class="nav-drawerList-item"><a href="index.html">HOME</a></li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuAbout.html">more upについて</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuMenu.html">メニュー</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuReserve.html">ご予約</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuFlow.html">診断の流れ</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuReport.html">お客様レポート</a>
+                        </li>
+                        <li class="nav-drawerList-item">
+                            <a href="MuAccess.html">アクセス</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <img src="./images/report.jpg" alt="" class="MuAbout-header-img" />
+    </div>
+    <div class="about-salon">
+        <div style="font-size: 2rem">REPORT</div>
+        <div style="font-size: 1.2rem; font-family: hannari">お客様レポート</div>
+    </div>
+    <!-- ヘッダーここまで -->
+    <!-- メイン -->
+    <div class="wrapper">
+        <div class="menu-top">
+            <div class="flow-top-title" style="display: flex; justify-content: center; align-items: center;">
+                <img src="./images/star.jpg" style="width: 3rem;margin-right: 0.5rem;" />
+                <div>お客様の変化をご紹介！</div>
+            </div>
+        </div>
+        <div class="report-wrapper">
+            <div class="report-title-wrapper fade-in fade-in-up">
+                <div class="report-title">
+                    File.1
+                </div>
+            </div>
+            <div class="guest-content-wrapper fade-in fade-in-up">
+                <div style="text-align: left; padding: 1rem; font-size: 0.9rem;" class="fade-in fade-in-up">
+                    <div>パーフェクト診断コース＋メイクアドバイス </div>
+                    <div>M様 30歳 </div>
+                </div>
+                <div class="face-wrapper" style="margin-top: 3rem;">
+                    <div class="fade-in fade-in-left">
+                        <img src="./images/report1.jpg" class="customer-image" />
+                        <div>Before</div>
+                        <div>普段メイク</div>
+                    </div>
+                    <div class="arrow"></div>
+                    <div class="after-make fade-in fade-in-left fade-in-left-delay">
+                        <img src="./images/report2.jpg" class="customer-image" />
+                        <div class="image-shift"></div>
+                        <div>After</div>
+                        <div>レッスン後</div>
+                    </div>
+                </div>
+                <div class="report-bottom">
+                    <div>パーソナルカラー：ブライトスプリング</div>
+                    <div>骨格：ナチュラル</div>
+                    <div>顔タイプ：クール</div>
+                </div>
+                <img src="./images/corde1.jpg" class="fade-in fade-in-left">
+            </div>
+        </div>
+        <div class="report-comment-wrapper fade-in fade-in-up">
+            <div class="report-comment-title">TOMOKO's comment</div>
+            <div class="report-comment">
+                M様は全体を通してスタイリッシュでお綺麗で都会的な印象です。どこか海外モデルを思わせる雰囲気が魅力的な方でした！<br>
+                メイクのポイントは抜け感のないベースメイクと切れ長な目を生かしたかっこいいアイメイク、チークは濃すぎると子供っぽくなるのでリップで血色を足しました。イエベ春のブライトタイプなので、はっきりとした鮮やかな赤リップが映えますね♪<br>
+                コーデは肌色を明るく見せるイエベカラーを軸に、シンプルでスタイリッシュ（クール要素）の中に余裕のある着こなし（ナチュラル要素）を取り入れています。ダークカラーを使いすぎると肌が暗くなり、またキツすぎる印象になるため注意です。診断結果に囚われすぎず、総合的な印象アップが最も重要です！
+            </div>
+        </div>
+        <div class="customer-review-wrapper fade-in fade-in-up">
+            <div class="customer-review-title">Customer's review</div>
+            <div class="customer-review-content-wrapper">
+                <div class="customer-review-content-title">①TOMOKOの印象は？</div>
+                <div class="customer-review">明るくて、話しやすい雰囲気でした。玄関から顔を出された瞬間から優しい親しみやすい雰囲気が出ていました！丁寧で分かりやすかったです。</div>
+            </div>
+            <div class="customer-review-content-wrapper">
+                <div class="customer-review-content-title">②サロンの雰囲気は？</div>
+                <div class="customer-review">清潔感あり、綺麗でおしゃれな空間でした。でもどこかゆったりできる空気があり、リラックスできました！</div>
+            </div>
+            <div class="customer-review-content-wrapper">
+                <div class="customer-review-content-title">③診断のご感想</div>
+                <div class="customer-review">
+                    自分のことがよく知れて嬉しいです自己診断ですると、合わないなぁと思っていた服も、トータルで診断して頂いたので、なぜ合わないかがよくわかりました！また私の好きな系統のテイストだったので、自信をもって色んな服に挑戦したいです。服の店名も紹介して頂いて、ありがたいです！！早速いきます。骨格診断、顔タイプ、カラーすべてやってよかったなと思います。またメイクについても、本当にガラッと変わって、楽しかったです。自分に合う色味も分かり、色々試したくなりました。帰りにもうさっそくハイライトとファンデ買い足しました！
+                </div>
+            </div>
+            <div class="customer-review-content-wrapper">
+                <div class="customer-review-content-title">④どんな人におすすめ？</div>
+                <div class="customer-review">自分に何が似合うのかを知りたい人、オシャレになりたい
+                    人、自分の系統に悩みがある人</div>
+            </div>
+        </div>
+        <div class="report-title-wrapper fade-in fade-in-up">
+            <div class="report-title">
+                File.2
+            </div>
+        </div>
+        <div class="guest-content-wrapper fade-in fade-in-up">
+            <div style="text-align: left; padding: 1rem; font-size: 0.9rem;" class="fade-in fade-in-up">
+                <div>パーフェクト診断コース＋メイクアドバイス </div>
+                <div>T様 22歳 </div>
+            </div>
+            <div class="face-wrapper" style="margin-top: 3rem;">
+                <div class="fade-in fade-in-left">
+                    <img src="./images/report3.jpg" class="customer-image" />
+                    <div>Before</div>
+                    <div>普段メイク</div>
+                </div>
+                <div class="arrow"></div>
+                <div class="after-make fade-in fade-in-left fade-in-left-delay">
+                    <img src="./images/report4.jpg" class="customer-image" />
+                    <div class="image-shift"></div>
+                    <div>After</div>
+                    <div>レッスンから半年後</div>
+                </div>
+            </div>
+            <div class="report-bottom">
+                <div>パーソナルカラー：ブライトスプリング</div>
+                <div>骨格：ウェーブ</div>
+                <div>顔タイプ：ソフトエレガント</div>
+            </div>
+            <img src="./images/corde2.jpg" class="fade-in fade-in-left">
+        </div>
+        <div class="report-comment-wrapper fade-in fade-in-up">
+            <div class="report-comment-title">TOMOKO's comment</div>
+            <div class="report-comment">
+                T様は優しく上品な印象で、お顔もお身体も柔らかい質感が魅力でした！<br>
+                メイクのポイントは上品な印象を生かすために濃くしすぎないこと、しかし手を抜くと子供っぽくなるため化粧感は残しています。中顔面を短縮させるテクニックも利用して小顔に見せました。<br>
+                カジュアルなスタイルが好みということで、きれいめカジュアルを軸にスタイルアップする着こなしをご提案。<br>
+                大きな柄や派手な色はお顔が負けてしまうため、得意なカラーを差し色にさりげない華やかさが上品でちょうどいいです♪<br>
+                ご年齢が若いということもあり、綺麗すぎないナチュラル感が清楚な印象となりお似合いです！
+            </div>
+        </div>
+        <div class="customer-review-wrapper fade-in fade-in-up">
+            <div class="customer-review-title">Customer's review</div>
+            <div class="customer-review-content-wrapper">
+                <div class="customer-review-content-title">①TOMOKOの印象は？</div>
+                <div class="customer-review">
+                    前回お話ししたことを覚えてくださっていて、嬉しかったです。可愛らしくて柔らかく、優しいお人柄なのに、診断やアドバイスは的確でとてもわかりやすく説明してくださいます。</div>
+            </div>
+            <div class="customer-review-content-wrapper">
+                <div class="customer-review-content-title">②サロンの雰囲気は？</div>
+                <div class="customer-review">白とピンクを基調とした明るく可愛らしい部屋がTOMOKOさんのイメージそのままで、終始優しい雰囲気でした。</div>
+            </div>
+            <div class="customer-review-content-wrapper">
+                <div class="customer-review-content-title">③診断のご感想</div>
+                <div class="customer-review">今までイエベかブルベかすらもわからなかったのですが、12タイプに分かれるさらに細かく、肌に合うカラーを教えていただき、とても勉強になりました。<br>
+                    好きな感じの色（くすみ系や青系）が肌馴染みがあまり良くないとのことでしたが、パーソナルカラーの結果だけでなく、顔タイプ診断の結果をふまえて好きだけど肌馴染み的には苦手な色をどう綺麗に合わせるかアドバイス頂けたのがとても良かったです。<br>
+                    さらに、服とコスメによってパーソナルカラーの結果を優先するか、顔タイプや骨格診断の結果を優先するか、教えていただけたので、好きな色の服を工夫して着ることもできそうですし、特に顔は肌に合った色のコスメを新調したいと思います。<br>
+                    顔タイプや骨格診断、パーソナルカラーは単体でも十分参考になりますが、全て組み合わせることでなりたい雰囲気に近づけると思いました！</div>
+            </div>
+            <div class="customer-review-content-wrapper">
+                <div class="customer-review-content-title">④どんな人におすすめ？</div>
+                <div class="customer-review">好きな色やなりたい雰囲気があるけど似合ってるかわからない方、どんな雰囲気になりたいかがわからない方にお勧めしたいです！友達にオススメしまくります！
+                </div>
+            </div>
+        </div>
+        <div class="flow-link-area">
+            <div class="flow-link-area-title">
+                <div>
+                    先に公式LINEにご登録<br />
+                    いただくとスムーズです
+                </div>
+                <img src="./images/hukidasi.jpg" alt="" style="width: 50%" />
+            </div>
+            <div class="flow-link-main">
+                <a href="https://lin.ee/c9Ox3fI"><img src="./images/line.jpg" alt="" class="flow-link-icon" /></a>
+                <div class="flow-link-content">
+                    予約申請後LINEにお名前をご入力ください<br />
+                    お支払い方法をお送りします
+                </div>
+            </div>
+            <div class="flow-link-main">
+                <a href="https://www.instagram.com/moreup_tomoko/"><img src="./images/instagram.jpg" alt=""
+                        class="flow-link-icon" /></a>
+                <div class="flow-link-content">
+                    予約開始はストーリーズでお知らせします<br />
+                    サロンの様子なども紹介しています♪
+                </div>
+            </div>
+        </div>
+        <div class="kind-button-wrapper">
+            <a class="kind-button" href="https://reserva.be/moreup">予約サイト</a>
+          </div>
+        <div class="caution-wrapper">
+            <div class="caution-title">※ご予約時の注意事項※</div>
+            <div class="caution-content-wrapper">
+                <div class="caution-content">
+                    ◆コースや人数により時間変更をお願いする場合があります。
+                </div>
+                <div class="caution-content">
+                    ◆割引をご希望の方は予約申請後に公式LINEでお申し出ください。SNS掲載許可はお顔出しOKの方のみとなります。割引後の金額をお支払いいただきます。必ずお支払い前におっしゃってください！
+                </div>
+                <div class="caution-content">
+                    ◆全コース事前支払いをお願いしております。振込手数料はご負担いただきますのでご了承ください。
+                </div>
+                <div class="caution-content">
+                    ◆期限内の振込がない場合自動キャンセルとなります。無断でキャンセルされると次回以降ご予約をお取りできなくなる可能性がありますのでご注意ください。直前の無断キャンセルは料金の30%のキャンセル料を請求いたします。
+                </div>
+                <div class="caution-content">
+                    ◆予約確定後はキャンセル不可です。ご返金はできませんのでご理解ください。
+                </div>
+                <div class="caution-content">
+                    ◆日程変更は体調不良でない限り1回のみとさせていただきます。直前の変更はお控えください。
+                </div>
+                <div class="caution-content">
+                    ◆当サロンは現在のところ女性専用となっております。ウェディング診断コースの場合はご新郎様との同席可能です。
+                </div>
+                <div class="caution-content">
+                    ◆お子様（未就学児）とご一緒される場合は一度ご相談ください。状況によりお断りさせていただく場合がございます。
+                </div>
+            </div>
+        </div>
+        <div class="link-area-wrapper">
+            <div class="link-area">
+              <div class="link-image-wrapper">
+                <a href="https://www.instagram.com/moreup_tomoko/">
+                  <img
+                    src="./images/link_instagram.jpg"
+                    alt=""
+                    class="link-image"
+                  />
+                </a>
+              </div>
+              <div class="link-image-wrapper">
+                <a href="https://lin.ee/c9Ox3fI">
+                  <img src="./images/link_line.jpg" alt="" class="link-image" />
+                </a>
+              </div>
+              <div class="link-image-wrapper">
+                <a href="https://ameblo.jp/moreup-tomoko/">
+                  <img src="./images/link_blog.jpg" alt="" class="link-image" />
+                </a>
+              </div>
+              <div class="link-image-wrapper">
+                <a href="https://twitter.com/moreuptomoko">
+                  <img
+                    src="./images/link_twitter.jpg"
+                    alt=""
+                    class="link-image"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="footer">
+        <div class="footer-title">
+            <div class="sub-title">Image Consulting Salon</div>
+            <div class="title">more up</div>
+        </div>
+        <p>&copy;Copyright more up TOMOKO. All right reserved.</p>
+    </div>
+    <!-- フッターここまで -->
+    </div>
+    </div>
+</body>
+
+</html>

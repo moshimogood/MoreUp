@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      【神戸】パーソナルカラー診断・骨格診断・顔タイプ診断・メイクレッスン　イメージアップサロンmore
+      up
+    </title>
+    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="description"
+      content="20代アドバイザーがパーソナルカラー診断・骨格診断・顔タイプ診断®をもとになりたいイメージに近づけるようアドバイスします。オンリーワンのレッスンで美しく、内側から輝く女性に♪"
+    />
+    <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script type="text/javascript">
+      $(window).on("load", function () {
+        $("#splash").fadeOut("slow");
+      });
+      $(window).scroll(function () {
+        $(".header").toggleClass("inner", window.scrollY > 100);
+        $(".title").toggleClass("inner", window.scrollY > 100);
+        $(".sub-title").toggleClass("inner", window.scrollY > 100);
+      });
+      $(document).ready(function () {
+        $(".slider").bxSlider({
+          auto: true,
+          pause: 5000,
+        });
+        function showLoading() {
+          $("#splash").fadeIn();
+        }
+        function hideLoading() {
+          $("#splash").fadeOut();
+        }
+
+        setTimeout(hideLoading, 500);
+
+        showLoading();
+      });
+      jQuery(function ($) {
+        var fadeIn = $(".fade-in");
+        $(window).scroll(function () {
+          $(fadeIn).each(function () {
+            var offset = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > offset - windowHeight + 200) {
+              $(this).addClass("scroll-in");
+            }
+          });
+        });
+      });
+      $(function () {
+        $(".nav-drawer").on("click", function () {
+          $(".nav-drawer").toggleClass("close"); // .btnにcloseというクラスが追加される
+          $(".nav-content").toggleClass("close");
+          $(".bx-viewport .slider").toggleClass("close");
+          $(".wrapper").toggleClass("close");
+          $("header").toggleClass("close");
+          $(".MuAbout-header-img").toggleClass("close");
+          $("body").toggleClass("close");
+          $("nav").fadeToggle(500); // navの表示・非表示切り替わる
+          $(".title").toggleClass("black");
+          $(".sub-title").toggleClass("black");
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="splash">
+      <div id="splash_logo">
+        <div class="sub-title-logo" style="color: grey">
+          Image Consulting Salon
+        </div>
+        <div class="title-logo" style="color: grey">more up</div>
+        <div class="load-circle"></div>
+      </div>
+    </div>
+    <!-- ヘッダー -->
+    <div class="wrapper" style="position: relative">
+      <header class="header">
+        <div class="header-wrapper">
+          <div class="header-title-wrapper">
+            <a href="index.html">
+              <div class="sub-title">Image Consulting Salon</div>
+              <div class="title">more up</div>
+            </a>
+          </div>
+          <div class="nav">
+            <ul class="nav-list">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="MuAbout.html">more upについて</a></li>
+              <li><a href="MuMenu.html">メニュー</a></li>
+              <li><a href="MuReserve.html">ご予約</a></li>
+              <li><a href="MuFlow.html">診断の流れ</a></li>
+              <li><a href="MuReport.html">お客様レポート</a></li>
+              <li><a href="MuAccess.html">アクセス</a></li>
+            </ul>
+          </div>
+          <div class="nav-drawer">
+            <span class="bar bar-top"></span>
+            <span class="bar bar-middle"></span>
+            <span class="bar bar-bottom"></span>
+          </div>
+          <div class="nav-content">
+            <ul class="nav-drawerList">
+              <li class="nav-drawerList-item"><a href="index.html">HOME</a></li>
+              <li class="nav-drawerList-item">
+                <a href="MuAbout.html">more upについて</a>
+              </li>
+              <li class="nav-drawerList-item">
+                <a href="MuMenu.html">メニュー</a>
+              </li>
+              <li class="nav-drawerList-item">
+                <a href="MuReserve.html">ご予約</a>
+              </li>
+              <li class="nav-drawerList-item">
+                <a href="MuFlow.html">診断の流れ</a>
+              </li>
+              <li class="nav-drawerList-item">
+                <a href="MuReport.html">お客様レポート</a>
+              </li>
+              <li class="nav-drawerList-item">
+                <a href="MuAccess.html">アクセス</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <img
+        src="./images/reserve-header.jpg"
+        alt=""
+        class="MuAbout-header-img"
+      />
+    </div>
+    <div class="about-salon">
+      <div style="font-size: 2rem">RESERVE</div>
+      <div style="font-size: 1.2rem; font-family: hannari">ご予約</div>
+    </div>
+    <!-- ヘッダーここまで -->
+    <!-- メイン -->
+    <div class="wrapper">
+      <div class="menu-top">
+        <div
+          class="flow-top-title"
+          style="display: flex; justify-content: center; align-items: center"
+        >
+          <img
+            src="./images/star.jpg"
+            style="width: 3rem; margin-right: 0.5rem"
+          />
+          <div>ご予約方法</div>
+        </div>
+      </div>
+      <div class="flow-wrapper">
+        <div class="flow-main">
+          <div class="flow-title">
+            <div class="flow-num">1</div>
+            <div class="flow-main-title">予約の申し込み</div>
+          </div>
+          <div class="flow-content">
+            <div style="margin: 1rem 0">
+              毎月15日から翌月の予約を受け付けております。<br />
+              例）5月の予約は4月15日から開始<br />
+              ご予約は下記の予約サイトから空き状況を確認いただき申し込みをしてください。
+            </div>
+          </div>
+        </div>
+        <div class="flow-main">
+          <div class="flow-title">
+            <div class="flow-num">2</div>
+            <div class="flow-main-title">事前支払い</div>
+          </div>
+          <div class="flow-content">
+            <div style="margin: 1rem 0">
+              申し込み後、事前支払いのお願いをLINEまたはメールにてお送りします。支払い方法は銀行振込で、期限はご連絡を差し上げてから2日以内です。
+            </div>
+          </div>
+        </div>
+        <div class="flow-main">
+          <div class="flow-title">
+            <div class="flow-num">3</div>
+            <div class="flow-main-title">予約確定</div>
+          </div>
+          <div class="flow-content">
+            <div style="margin: 1rem 0">
+              ご入金を確認できたら予約確定です。当日の持ち物や場所のご案内をお送りします。
+            </div>
+          </div>
+        </div>
+        <div class="flow-main">
+          <div class="flow-title">
+            <div class="flow-num">4</div>
+            <div class="flow-main-title">ご来店</div>
+          </div>
+          <div class="flow-content">
+            <div style="margin: 1rem 0">
+              当日はお友達の家に遊びに行く感覚でリラックスしてお越しください♪お会いできるのを楽しみにしております。
+            </div>
+          </div>
+        </div>
+        <div class="flow-link-area">
+          <div class="flow-link-area-title">
+            <div>
+              先に公式LINEにご登録<br />
+              いただくとスムーズです
+            </div>
+            <img src="./images/hukidasi.jpg" alt="" style="width: 50%" />
+          </div>
+          <div class="flow-link-main">
+            <a href="https://lin.ee/c9Ox3fI"
+              ><img src="./images/line.jpg" alt="" class="flow-link-icon"
+            /></a>
+            <div class="flow-link-content">
+              予約申請後LINEにお名前をご入力ください<br />
+              お支払い方法をお送りします
+            </div>
+          </div>
+          <div class="flow-link-main">
+            <a href="https://www.instagram.com/moreup_tomoko/"
+              ><img src="./images/instagram.jpg" alt="" class="flow-link-icon"
+            /></a>
+            <div class="flow-link-content">
+              予約開始はストーリーズでお知らせします<br />
+              サロンの様子なども紹介しています♪
+            </div>
+          </div>
+        </div>
+        <div class="kind-button-wrapper">
+          <a class="kind-button" href="https://reserva.be/moreup">予約サイト</a>
+        </div>
+        <div class="caution-wrapper">
+          <div class="caution-title">※ご予約時の注意事項※</div>
+          <div class="caution-content-wrapper">
+            <div class="caution-content">
+              ◆コースや人数により時間変更をお願いする場合があります。
+            </div>
+            <div class="caution-content">
+              ◆割引をご希望の方は予約申請後に公式LINEでお申し出ください。SNS掲載許可はお顔出しOKの方のみとなります。割引後の金額をお支払いいただきます。必ずお支払い前におっしゃってください！
+            </div>
+            <div class="caution-content">
+              ◆全コース事前支払いをお願いしております。振込手数料はご負担いただきますのでご了承ください。
+            </div>
+            <div class="caution-content">
+              ◆期限内の振込がない場合自動キャンセルとなります。無断でキャンセルされると次回以降ご予約をお取りできなくなる可能性がありますのでご注意ください。直前の無断キャンセルは料金の30%のキャンセル料を請求いたします。
+            </div>
+            <div class="caution-content">
+              ◆予約確定後はキャンセル不可です。ご返金はできませんのでご理解ください。
+            </div>
+            <div class="caution-content">
+              ◆日程変更は体調不良でない限り1回のみとさせていただきます。直前の変更はお控えください。
+            </div>
+            <div class="caution-content">
+              ◆当サロンは現在のところ女性専用となっております。ウェディング診断コースの場合はご新郎様との同席可能です。
+            </div>
+            <div class="caution-content">
+              ◆お子様（未就学児）とご一緒される場合は一度ご相談ください。状況によりお断りさせていただく場合がございます。
+            </div>
+          </div>
+        </div>
+        <div class="link-area-wrapper">
+          <div class="link-area">
+            <div class="link-image-wrapper">
+              <a href="https://www.instagram.com/moreup_tomoko/">
+                <img
+                  src="./images/link_instagram.jpg"
+                  alt=""
+                  class="link-image"
+                />
+              </a>
+            </div>
+            <div class="link-image-wrapper">
+              <a href="https://lin.ee/c9Ox3fI">
+                <img src="./images/link_line.jpg" alt="" class="link-image" />
+              </a>
+            </div>
+            <div class="link-image-wrapper">
+              <a href="https://ameblo.jp/moreup-tomoko/">
+                <img src="./images/link_blog.jpg" alt="" class="link-image" />
+              </a>
+            </div>
+            <div class="link-image-wrapper">
+              <a href="https://twitter.com/moreuptomoko">
+                <img
+                  src="./images/link_twitter.jpg"
+                  alt=""
+                  class="link-image"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="footer-title">
+            <div class="sub-title">Image Consulting Salon</div>
+            <div class="title">more up</div>
+          </div>
+          <p>&copy;Copyright more up TOMOKO. All right reserved.</p>
+        </div>
+        <!-- フッターここまで -->
+      </div>
+    </div>
+  </body>
+</html>
